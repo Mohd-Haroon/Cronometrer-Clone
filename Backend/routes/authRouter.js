@@ -15,7 +15,16 @@ authRouter.post("/signup", async (req, res) => {
 
 authRouter.post("/login", async (req, res) => {
     const user = await UserModel.find(req.body);
-    res.send(user);
+    if (user.length > 0) {
+        const { _id, email } = user[0];
+        const payload = {
+            id: _id, email
+        }
+        res.send(payload);
+    }
+    else {
+        res.status(404).send({ message: "Wrong Credentials" });
+    }
 });
 
 
