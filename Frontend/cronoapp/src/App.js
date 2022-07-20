@@ -1,12 +1,14 @@
 import React from "react";
-import "./App.css";
+
 import {AllRoutes} from "./AllRoutes/AllRoutes"
+import HomePage from "./components/HomePage";
 
 function App() {
   return (
     <div className="App">
-      <h1>cronometer.com</h1>
+     
       <AllRoutes/>
+      <HomePage/>
     </div>
   );
 }
