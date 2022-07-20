@@ -7,17 +7,18 @@ statsRouter.get("/", (req, res) => {
     res.send("Get from stats router");
 })
 
-statsRouter.get("/:userId/stats", async (req, res) => {
-    const { userId } = req.params;
-    const stats = await StatsModel.find({ id: userId });
+statsRouter.get("/:userId/:date/stats", async (req, res) => {
+    const { userId, date } = req.params;
+    const stats = await StatsModel.find({ $and: [{ userId: userId }, { date: date }] });
     res.send(stats);
 })
 
-statsRouter.post("/:userId/stats", async (req, res) => {
-    const { userId } = req.params;
+statsRouter.post("/:userId/:date/stats", async (req, res) => {
+    const { userId,date } = req.params;
     const payload = {
         ...req.body,
-        userId
+        userId,
+        date
     }
     const userStats = await new StatsModel(payload);
     await userStats.save((err, success) => {

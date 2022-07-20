@@ -5,7 +5,8 @@ const statsSchema = mongoose.Schema({
     description: String,
     amount: Number,
     unit: String,
-    energy: String
+    energy: String,
+    date: String
 })
 
 const StatsModel = mongoose.model("stat", statsSchema);
