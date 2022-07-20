@@ -1,5 +1,5 @@
 const express = require("express");
-// const { connection } = require("./db");
+const { connection } = require("./db");
 const authRouter = require("./routes/authRouter");
 const cors = require("cors");
 
@@ -13,17 +13,17 @@ app.use(express.urlencoded({ extended: true }));
 app.use("/auth", authRouter);
 
 app.get("/", (req, res) => {
-    res.send("main page")
+    res.send("Welcome to Homapage")
 })
 
 
 app.listen(8080, async () => {
-    // try{
-    //     await connection;
-    //     console.log("db connection established")
-    // }
-    // catch(err){
-    //     console.log("failed to cnnect");
-    // }
+    try{
+        await connection;
+        console.log("db connection established")
+    }
+    catch(err){
+        console.log("failed to cnnect");
+    }
     console.log("server running on port http://localhost:8080");
 });

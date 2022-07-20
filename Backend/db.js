@@ -1,9 +1,5 @@
-
 const mongoose = require("mongoose")
 
-const connection = mongoose.connect("url");
+const connection = mongoose.connect("mongodb://localhost:27017/cronoapp");
 
-
-
-
-module.exports = {connection}
+module.exports = { connection }
