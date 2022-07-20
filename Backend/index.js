@@ -24,8 +24,10 @@ app.listen(8080, async () => {
         await connection;
         console.log("db connection established")
     }
+
     catch (err) {
         console.log("failed to cnnect");
     }
     console.log("server running on port http://localhost:8080");
+
 });
