@@ -1,11 +1,11 @@
 import React from "react";
-import "./App.css";
 import {AllRoutes} from "./AllRoutes/AllRoutes"
+import {UserMainPage} from "./Component/userdashboard/Mainpage"
 
 function App() {
   return (
-    <div className="App">
-      <h1>cronometer.com</h1>
+    <div className="App" style={{backgroundColor:"white"}}>
+      {/* <UserMainPage/> */}
       <AllRoutes/>
     </div>
   );
