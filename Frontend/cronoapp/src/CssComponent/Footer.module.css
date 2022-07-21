@@ -1,0 +1,107 @@
+.prefooter{
+    padding: 4% 2%;
+    background-color: #4f4e53;
+}
+.logos{
+     color: white;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 940px;
+    justify-content: center;
+    gap:20px
+}
+
+.NavBarCart {
+    font-size: 27px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    line-height: 40px;
+    border: 2px solid white;
+    cursor: pointer;
+    justify-content: center;
+    margin-bottom: 40px;
+  }
+
+  .icimg2{
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+.icimg2 img{
+    width: 13%;
+}
+.containermain{
+    /* max-width: 1140px;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 0px; */
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+    padding-top: 4%;
+    padding: 4% 2%;
+    background-color: #4f4e53;
+}
+.gridFoot{
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    display: grid;
+    /* grid-auto-columns: 1fr; */
+    grid-row-gap: 16px;
+    grid-column-gap: 16px;
+    width: 80%;
+    margin: auto;
+    margin-top: -80px;
+}
+.lo{
+    margin-top: 0px;
+}
+.lo img{
+    width: 80%;
+    max-width: 100%;
+    vertical-align: middle;
+    display: inline-block;
+    
+}
+.ppara{
+    margin-bottom: 4%;
+    padding-bottom: 1%;
+    font-family: 'Open Sans', sans-serif;
+    color: #fff;
+    font-size: 1.125em;
+    font-weight: 700;
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    
+
+
+}
+.ppa{
+    font-family: 'Open Sans', sans-serif;
+    color: #fff;
+    font-size: 1em;
+    line-height: 1.5em;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.ppa p:hover{
+    color:  #ff763f;;
+}
+.copy{
+    
+    font-family: 'Open Sans', sans-serif;
+    color: #fff;
+    font-size: 1.125em;
+    line-height: 1.5em;
+    font-weight: 400;
+    text-align: center;
+    margin-top: 5%;
+    
+}

@@ -1,0 +1,97 @@
+.MainHome{
+    display: flex;
+    gap: 30px;
+    position: relative;
+    left: 0%;
+    top: 0%;
+    right: 0%;
+    bottom: auto;
+    padding-right: 2%;
+    padding-left: 2%;
+    align-items: center;
+    background-color: transparent;
+    
+}
+.MainDiv{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    transition: all 200ms ease;
+    font-family: 'Open Sans', sans-serif;
+    color: #333;
+    font-size: 18px;
+    text-decoration: none;
+    left: 0%;
+    top: 0%;
+    right: 0%;
+    bottom: auto;
+    padding-right: 2%;
+    padding-left: 2%;
+    align-items: center;
+    background-color: transparent;
+    margin-top: 40px;
+}
+.imgDiv{
+   
+    width: 250px;
+    max-width: 100%;
+    vertical-align: middle;
+    transition: background 1s;
+/* }
+.imgDiv img{
+    transition: background 1s;
+    transition: calc(2);
+} */
+}
+.btn{
+    display: flex;
+    padding: 10px 36px;
+    justify-content: center;
+    align-items: center;
+    border: 1.5px solid #ff763f;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 2px 10px 0 rgb(0 0 0 / 15%);
+    transition: all 400ms ease-out;
+    font-family: 'Open Sans', sans-serif;
+    color: #ff763f;
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-decoration: none;
+    text-transform: none;
+    white-space: nowrap;
+    
+}
+.MainDiv p:hover{
+    color: #ff763f;
+}
+.btn:hover{
+    background-color:#f4e3dc
+}
+.Chil{
+    position: relative;
+    z-index: 25;
+    display: flex;
+    padding: 20px;
+    align-items: center;
+    transition: all 200ms ease;
+    color: #283338;
+    font-size: 16px;
+    text-decoration: none;
+    text-align: justify;
+    gap: 15px;
+}
+.Chil img{
+    display: inline-block;
+    width: 45px;
+}
+.pi{
+    color:#808080;
+    background-color:none;
+
+}
+.Chil:hover{
+    background-color:#f4edea
+}

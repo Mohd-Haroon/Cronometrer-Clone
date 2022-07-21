@@ -22,12 +22,12 @@ const HomePage = () => {
             <img src="https://cdn1.cronometer.com/2021/landing/cronometer-logo.svg" alt="" />
         </div>
         <div className={styles.MainHome}>
-            <p><Menuoff/></p><span><IoIosArrowDown/></span>
-            <p>Support</p>
-            <p>Blog</p>
-            <p>Froums</p>
-            <p>About</p>
-            <button className={styles.btn}>Log In</button>
+        <p><Menuoff/></p><span><IoIosArrowDown/></span>
+            <Link to="/support"><p>Support</p></Link>
+            <Link to="/blog"> <p>Blog</p></Link>
+            <Link to="/forum"> <p>Froums</p></Link>
+            <Link to="/about"> <p>About</p></Link>
+           <Link to="/login"> <button className={styles.btn}>Log In</button></Link>
         </div>
     </div>
     {/* homePaage */}
@@ -39,7 +39,7 @@ const HomePage = () => {
 
             <button className={styles.btn2}>Sign Up-it's Free!</button>
 
-            <p>Already have an account? Log in.</p>
+            <p style={{marginTop:"40px"}}>Already have an account? <Link to="/login" style={{textDecoration:"underline"}}> Log in.</Link></p>
         </div>
         <div className={styles.secimg}><img src="https://cdn1.cronometer.com/2021/landing/cronometer-hero-graphic.svg" alt="" /></div>
     </div>
@@ -301,7 +301,7 @@ const HomePage = () => {
             <p className={styles.mainpara}>Our headquarters are based in the idyllic mountain town of Revelstoke, BC, Canada. We are a team of over 25 professionals brought together by a love of nutrition, skiing, biking and the great outdoors.About Us</p>
         </div>
         <div className={styles.power}>
-            <button className={styles.pbtn}>About Us</button>
+          <button className={styles.pbtn}> <Link to="/about">About Us</Link> </button>
         </div>
 
         <hr />
@@ -335,7 +335,7 @@ const HomePage = () => {
             <img src="https://cdn1.cronometer.com/2021/landing/ios-icon.svg" alt="" />
             <img src="	https://cdn1.cronometer.com/2021/landing/android-icon.svg" alt="" />
         </div>
-        <hr />
+        <hr style={{width:"80%",margin:"auto"}}/>
         </div>
         
         <div className={styles.containermain}>
@@ -344,33 +344,35 @@ const HomePage = () => {
                     <img src="https://cdn1.cronometer.com/2021/landing/crono-logo-white.svg" alt="" />
                 </div>
                 <div>
+                    <p className={styles.ppara}>Cronometer</p>
+                    <div className={styles.ppa}>
+                        <p>For individual</p>
+                        <p>For Profeesional</p>
+                        <p>privecy</p>
+                        <p>Terms</p>
+                    </div>
+                </div>
+                <div>
                     <p className={styles.ppara}>The Company</p>
                     <div className={styles.ppa}>
                         <p>About Us</p>
                         <p>Crono Blog</p>
                         <p>Crono Forums</p>
                         <p>jobs</p>
+                        <p>Support</p>
                     </div>
                 </div>
                 <div>
-                    <p className={styles.ppara}>Cronometer</p>
+                    <p className={styles.ppara}>Partners & Affiliates</p>
                     <div className={styles.ppa}>
-                        <p>For individual</p>
-                        <p>For Profeesional</p>
-                        <p>privecy</p>
-                        <p>Terms</p>
+                        <p>Affiliate Program</p>
+                        <p>Media Kit</p>
                     </div>
                 </div>
-                <div>
-                    <p className={styles.ppara}>Cronometer</p>
-                    <div className={styles.ppa}>
-                        <p>For individual</p>
-                        <p>For Profeesional</p>
-                        <p>privecy</p>
-                        <p>Terms</p>
-                    </div>
-                </div>
+                
               </div>
+              <div className={styles.copy}>Copyright © 2011-2022 <br />
+All rights reserved</div>
          </div>
   
 

@@ -36,6 +36,12 @@
     width: 250px;
     max-width: 100%;
     vertical-align: middle;
+    transition: background 1s;
+/* }
+.imgDiv img{
+    transition: background 1s;
+    transition: calc(2);
+} */
 }
 .btn{
     display: flex;
@@ -272,10 +278,10 @@
     width: 28%;
     margin-left:70px;
 }
-.list:hover{
+/* .list:hover{
     border: 0.8px solid red;
     
-}
+} */
 
 
 .wrdiv2{
@@ -753,4 +759,18 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
+}
+.ppa p:hover{
+    color:  #ff763f;;
+}
+.copy{
+    
+    font-family: 'Open Sans', sans-serif;
+    color: #fff;
+    font-size: 1.125em;
+    line-height: 1.5em;
+    font-weight: 400;
+    text-align: center;
+    margin-top: 5%;
+    
 }
