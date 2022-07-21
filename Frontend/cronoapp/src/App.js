@@ -5,13 +5,15 @@ import Forums from "./components/Forums";
 import About from "./components/About";
 import HomePage from "./components/HomePage";
 import OTherFooter from "./components/OTherFooter";
+import Support from "./components/Support";
 
 function App() {
   return (
     <div className="App" style={{backgroundColor:"white"}}>
-      {/* <AllRoutes/> */}
+      <AllRoutes/>
       {/* <About/> */}
-      <OTherFooter/>
+      {/* <OTherFooter/> */}
+      {/* <Support/> */}
     </div>
   );
 }
