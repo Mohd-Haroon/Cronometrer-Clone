@@ -31,7 +31,7 @@ export const UserMainPage = () => {
             />
           </Box>
         </Flex>
-        <Flex color="#E65F29" w="580px" h="60px" fontSize="14px" fontWeight="600" letterSpacing="0.05rem" ml="200px">
+        <Flex color="#E65F29" w="580px" h="60px" fontSize="14px" fontWeight="600" letterSpacing="0.05rem" ml="200px" borderBottom="1px solid #eee">
           <Box as="button" _focus={{
             border:"1px solid #E0E0DC",
             borderBottom:"1px solid #FBFBFA",

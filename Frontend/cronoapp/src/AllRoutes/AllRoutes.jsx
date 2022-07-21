@@ -4,6 +4,7 @@ import About from "../components/About";
 import Bolgs from "../components/Bolgs";
 import Forums from "../components/Forums";
 import HomePage from "../components/HomePage";
+import Login from "../Login/Login";
 import Support from "../components/Support";
 import {UserMainPage} from "../Component/userdashboard/Mainpage"
 import {Diary} from "../Component/userdashboard/Diary";
@@ -30,4 +31,3 @@ export const AllRoutes = () => {
     );
   };
   
-
