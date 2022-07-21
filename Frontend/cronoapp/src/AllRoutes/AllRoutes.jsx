@@ -4,12 +4,12 @@ import About from "../components/About";
 import Bolgs from "../components/Bolgs";
 import Forums from "../components/Forums";
 import HomePage from "../components/HomePage";
-import Login from "../components/Login";
 import Support from "../components/Support";
 import {UserMainPage} from "../Component/userdashboard/Mainpage"
 import {Diary} from "../Component/userdashboard/Diary";
 import { Home } from '../Login/Home';
 import Signup from '../Login/Signup';
+import { Settings } from "../Component/userdashboard/Settings";
 
 export const AllRoutes = () => {
     return (
@@ -24,6 +24,7 @@ export const AllRoutes = () => {
       <Route path='/signup' element={<Signup />} />
         <Route path="/user/" element={<UserMainPage/>} >
           <Route path="diary" element={<Diary/>} />
+          <Route path="settings" element={<Settings/>} />
         </Route>
       </Routes>
     );
