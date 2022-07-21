@@ -27,5 +27,13 @@ authRouter.post("/login", async (req, res) => {
     }
 });
 
+authRouter.delete("/user/:userId", (req, res) => {
+    const { userId } = req.params;
+    UserModel.findByIdAndDelete(userId, (err) => {
+        if (err) return res.send({ message: "Something went wrong while deleting" });
+        return res.send("Successfully deleted the user");
+    })
+})
+
 
 module.exports = authRouter;
