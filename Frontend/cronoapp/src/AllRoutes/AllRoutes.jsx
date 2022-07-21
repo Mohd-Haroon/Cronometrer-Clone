@@ -12,8 +12,6 @@ import {Diary} from "../Component/userdashboard/Diary";
 export const AllRoutes = () => {
     return (
       <Routes>
-        <Route path="/" element={<HomePage/>}/>
-        <Route path="/login" element={<Login/>}/>
         <Route path="/support" element={<Support/>}/>
         <Route path="/blog" element={<Bolgs/>}/>
         <Route path="/forum" element={<Forums/>}/>
