@@ -10,17 +10,30 @@ import {
   ListItem,
   UnorderedList,
   Button,
-  Text
+  Text,
+  Table,
+    Tbody,
+    Tr,Td,Thead,TableContainer
 } from "@chakra-ui/react";
+import {DatePick} from "./Datepicker"
 
 export const Diary = () => {
+  const [datee,setDate] = React.useState(new Date())
+
+  const datechange=(date)=>{
+    // console.log("date1",date.getFullYear(),date.getMonth()+1,date.getDate())
+    setDate(date)
+    // console.log("date2",datee.getFullYear(),datee.getMonth()+1,datee.getDate())
+    console.log('dateeeee',datee.toDateString())
+  }
+  console.log('dateeeeeout',datee.toDateString())
   return (
-    <VStack border="1px solid red" w="80%" h="auto" mt="30px">
+    <VStack border="1px solid white" w="80%" h="auto" mt="30px">
       <Flex w="100%" gap="10px">
-        <VStack  border="1px solid red" w="30%">
-            <Box>left</Box>
+        <VStack  border="1px solid #eee" w="30%">
+            <DatePick datechange={datechange} />
         </VStack>
-        <VStack  border="1px solid red" w="70%">
+        <VStack   w="70%">
         <Box w="100%">
             <AddFood/>
             <Button color="#404040" fontSize="14px" fontWeight="700" p="4px 12px" textAlign="left" border="none" borderRadius="14px" mr="5px" >
@@ -36,6 +49,62 @@ export const Diary = () => {
                 <Text ml="7px">ADD NOTE</Text>
             </Button>
             <Image p="2px" mt="10px" float="right" w="25px" h="25px" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABgCAYAAADimHc4AAABaklEQVR4Xu3azU3DQBAG0LlxoQXIhRKhBkQJUASUACVAJwgJceLHI+VCVpGdeM0Y6T3pk1DivcxhY3a/CAAAAAAAgPU5G3I15GnI6zb5d36W37GQ0yEPQ76GfO9JfpfP5LN0dDLkJdqB70s+m2vo5C7aIY8l19DBxZDPaAc8llyTa5npOtrhTk2uZabnaAc7NflbwEwf0Q52at6D2d6iHezU5FpmsgUVu4l2sFOTa5lpE8e/hp4HXdxGO+Cx+EesozxWOOS3wFHEAvKA7T7GD+PyGYdxC8p9/TJ+H0c/bj+z5wMAACxAL6iIXlAhvaBiekGF9IKK6QUVO+QiZjcu5TvQCyqmF1TMFlRML6jYJo5/DXVH3IleUDG9oBXQC1oJvSAAAIA/phdURC+okF5QMb2gQnpBxfSCih1yEbMbl/Id6AUV0wsqZgsqphdUbBPHv4a6I+5EL6iYXtAK6AWthF4QAAAAAADwr/wAXpVUQUN5zAgAAAAASUVORK5CYII=" />
+        </Box>
+        {/* //table */}
+        <Box border="1px solid #e7e9ea" borderRadius="5px" m="13px 0px 5px 0px" minHeight="300px" w="100%" overflow="visible">
+          <TableContainer w="100%">
+            <Table    borderCollapse="collapse" textAlign="left" color="#222" border="1px solid #eee" borderRadius="2px">
+                                    <Thead lineHeight="15px">
+                                        <Tr backgroundColor="#eee">
+                                            <Td backgroundColor="#eeeeee">
+                                                <Box h="10px" backgroundColor="#eee" whitespace="nowrap">
+                                                    Description
+                                                </Box>
+                                            </Td>
+                                            <Td backgroundColor="#eeeeee" textAlign="right">
+                                                <Box h="10px" backgroundColor="#eee" whitespace="nowrap">
+                                                    Amount
+                                                </Box>
+                                            </Td>
+                                            <Td backgroundColor="#eeeeee" textAlign="left">
+                                                <Box h="10px" backgroundColor="#eee" whitespace="nowrap">
+                                                    Unit
+                                                </Box>
+                                            </Td>
+                                            <Td backgroundColor="#eeeeee" textAlign="right">
+                                                <Box h="10px" backgroundColor="#eee" whitespace="nowrap">
+                                                    Energy(kcal)
+                                                </Box>
+                                            </Td>
+                                        </Tr>
+                                            
+                                    </Thead>
+                                    <Tbody>
+                                    <Tr >
+                                            <Td>
+                                                <Box h="10px" whitespace="nowrap">
+                                                    Description
+                                                </Box>
+                                            </Td>
+                                            <Td textAlign="right">
+                                                <Box h="10px" whitespace="nowrap">
+                                                    Amount
+                                                </Box>
+                                            </Td>
+                                            <Td textAlign="left">
+                                                <Box h="10px" whitespace="nowrap">
+                                                    Unit
+                                                </Box>
+                                            </Td>
+                                            <Td textAlign="right">
+                                                <Box h="10px" whitespace="nowrap">
+                                                    Energy(kcal)
+                                                </Box>
+                                            </Td>
+                                        </Tr>
+                                    </Tbody>
+            </Table>
+          </TableContainer>
         </Box>
         </VStack>
       </Flex>
