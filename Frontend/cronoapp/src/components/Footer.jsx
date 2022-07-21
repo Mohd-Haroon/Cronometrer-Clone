@@ -4,7 +4,7 @@ import { IoIosArrowDown } from 'react-icons/io';
 import { Link } from 'react-router-dom';
 import { BsInstagram } from 'react-icons/bs';
 
-import { FaFacebookF } from 'react-icons/fa';
+// import { FaFacebookF } from 'react-icons/fa';
 
 import { BsTwitter } from 'react-icons/bs';
 import { GrYoutube } from 'react-icons/gr';
@@ -20,7 +20,7 @@ const Footer = () => {
      <BsInstagram style={{margin:"11px 11px"}}/>
    </div>
    <div className={styles.NavBarCart}>
-    <FaFacebookF style={{margin:"11px 11px"}} />
+    {/* <FaFacebookF style={{margin:"11px 11px"}} /> */}
    </div>
    <div className={styles.NavBarCart}>
     <BsTwitter style={{margin:"11px 11px"}}/>
