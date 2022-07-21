@@ -1,8 +1,9 @@
 const express = require("express");
-// const { Connection } = require("mongoose");
+const { Connection } = require("mongoose");
 const { connection} = require("./db");
 const  cors = require("cors");
-
+require("dotenv").config();
+const userRouter = require("./Auth/User_route");
 
 const app = express();
 
@@ -11,7 +12,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 
-
+ app.use("/auth", userRouter);
 
 
 
