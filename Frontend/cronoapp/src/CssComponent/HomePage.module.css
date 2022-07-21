@@ -225,6 +225,9 @@
     font-size: 1.5em;
     line-height: 1.25em;
 }
+.h5divv h5{
+    color: #1b1a1c;
+}
 .texts{
     padding-top: 2%;
     padding-bottom: 0px;
@@ -264,6 +267,7 @@
 }
 .subchil h5{
     font-weight: 600;
+    color: #1b1a1c;
    
 }
 .psub p{
@@ -305,6 +309,7 @@
 }
 .subchil2 h5{
     font-weight: 700;
+    color: #1b1a1c;
    
 }
 .psub2{
