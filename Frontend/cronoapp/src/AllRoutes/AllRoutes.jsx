@@ -8,7 +8,6 @@ import Support from "../components/Support";
 import {UserMainPage} from "../Component/userdashboard/Mainpage"
 import {Diary} from "../Component/userdashboard/Diary";
 import { Home } from '../Login/Home';
-import Login from '../Login/Login';
 import Signup from '../Login/Signup';
 import { Settings } from "../Component/userdashboard/Settings";
 
@@ -20,7 +19,7 @@ export const AllRoutes = () => {
         <Route path="/forum" element={<Forums/>}/>
         <Route path="/about" element={<About/>}/>
         <Route path="/product" element={<HomePage/>}/>
-        <Route path='/' element={<Home />} />
+        <Route path='/' element={<HomePage />} />
       <Route path='/login' element={<Login />} />
       <Route path='/signup' element={<Signup />} />
         <Route path="/user/" element={<UserMainPage/>} >
