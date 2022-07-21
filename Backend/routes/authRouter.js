@@ -27,5 +27,31 @@ authRouter.post("/login", async (req, res) => {
     }
 });
 
+authRouter.delete("/user/:userId", (req, res) => {
+    const { userId } = req.params;
+    UserModel.findByIdAndDelete(userId, (err) => {
+        if (err) return res.send({ message: "Something went wrong while deleting" });
+        return res.send("Successfully deleted the user");
+    })
+})
+
+authRouter.patch("/user/:userId", (req, res) => {
+    const { userId } = req.params;
+    UserModel.updateOne({ _id: userId }, { $set: { ...req.body } }, (err) => {
+        if (err) res.send(err);
+        res.send("updated")
+    })
+})
+
 
 module.exports = authRouter;
+
+
+// {
+//     "email": "xyz@test.com",
+//     "password": "something",
+//     "height": "156",
+//     "weight": "45",
+//     "dob": "54566",
+//     "gender": "Male"
+// }
