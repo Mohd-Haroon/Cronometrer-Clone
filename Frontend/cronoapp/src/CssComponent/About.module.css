@@ -61,14 +61,14 @@ div{
     font-weight: 600;
     
 }
-.iamp{
+.pp{
     margin-bottom: 0px;
     font-family: 'Open Sans', sans-serif;
     color: #404040;
     font-size: 1.225em;
     line-height: 1.8em;
     margin-top: 0;
-    letter-spacing: 2px;
+    letter-spacing: 0.7px;
 }
 .teams{
     display: flex;
@@ -176,6 +176,7 @@ div{
     display: flex;
     margin-top: 4%;
     justify-content: center;
+    margin-top: 40px;
 }
 .pbtn{
     padding: 1% 6%;
@@ -192,8 +193,8 @@ div{
     /* display: inline-block;
     text-decoration: none; */
     cursor: pointer;
-    /* margin-bottom: 50px; */
-    
+    margin-bottom: 50px;
+   
 }
 .pbtn:hover{
     background-color: #f8f8f8;
@@ -208,7 +209,7 @@ div{
     line-height: 1.5em;
     font-weight: 400;
     text-align: left;
-    letter-spacing: 1px;
+    letter-spacing: 0.8px;
     text-transform: none;
      justify-content: center;
      text-align: center;

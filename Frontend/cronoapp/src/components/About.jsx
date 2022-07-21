@@ -7,7 +7,7 @@ const About = () => {
   return (
     <>
       <Navbar/>
-   <hr />
+      <hr  style={{marginTop:"80px",border:"0.1px solid  rgb(163, 174, 183)" , width:"80%",justifyContent:"center",marginLeft:"150px"}}/>
     <div className={styles.about}>
        <div className={styles.subabout}>
 
@@ -45,7 +45,7 @@ Cronometer's success has hinged entirely on positive word-of-mouth from its user
                 <h2 className={styles.h2data}> Who We Are</h2>
               </div>
               <div className={styles.parawi}>
-                <p className={styles.iamp}>While our staff spans the globe our headquarters is based in the small-town of Revelstoke, British Columbia, Canada. Revelstoke is a health-centric mountain town brimming with endless options for staying active and a growing tech community – the perfect combination to call home.
+                <p className={styles.pp}>While our staff spans the globe our headquarters is based in the small-town of Revelstoke, British Columbia, Canada. Revelstoke is a health-centric mountain town brimming with endless options for staying active and a growing tech community – the perfect combination to call home.
 <br />
 We are an eclectic mix of web developers, designers, nutrition scientists, business majors and personal trainers brought together by a love of nutrition. While our company has grown our mission and values have remained the same; we believe full spectrum nutrition is the best way to understand your diet’s effect on your health. We also believe in empowering everyone by ensuring they have access to accurate and comprehensive data to make informed decisions.
 <br />
@@ -56,10 +56,10 @@ If you have interest in your personal nutrition or working with your client’s 
 Have questions? We would love to hear from you. Email us at: support@cronometer.com
 <br />
 Help us spread the good word about nutrition and</p>
-
+<hr  style={{marginTop:"80px",border:"1px solid  #4f4e53"}}/>
               </div>
 
-              <hr />
+            
 
         <div className={styles.para}>
           <div>
