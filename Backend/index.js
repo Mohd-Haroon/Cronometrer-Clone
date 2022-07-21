@@ -20,7 +20,7 @@ app.get("/", (req, res)=>{
 })
 
 
-app.listen(7000, async () => {
+app.listen(8080, async () => {
     try{
         await connection;
         console.log("db connection established")
@@ -28,5 +28,5 @@ app.listen(7000, async () => {
     catch(err){
         console.log("failed to connect");
     }
-  console.log("http://localhost:7000/");
+  console.log("http://localhost:8080/");
 });
