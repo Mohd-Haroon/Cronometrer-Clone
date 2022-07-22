@@ -1,6 +1,7 @@
-import React, { useState, setState } from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import { ToastContainer, toast } from "react-toastify";
 import axios from 'axios';
 
 const Log = styled.div`
@@ -33,9 +34,39 @@ const Label = styled.label`
   gap: 18%;
 `;
 
-const Login = () => {
+const Login = ({ setState }) => {
+
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const notify = (msg) => toast(msg);
+  const error = (msg) => toast.error(msg);
+  const handleLogin = () => {
+    axios
+      .post("https://salty-chamber-30466.herokuapp.com/auth/login", {
+        email,
+        password,
+      })
+      .then((res) => {
+        alert("Loging Successful");
+        console.log(res);
+        if (res.data.message) {
+          notify(res.data.message.toUpperCase());
+          localStorage.setItem("user", JSON.stringify(res.data.userLogin));
+          localStorage.setItem("token", JSON.stringify(res.data.token));
+          setState(false);
+        }
+      })
+      .catch((err) => {
+        alert("Wrong credentials");
+        if (err.response.status === 422 || 404) {
+          error(err.response.data.error.toUpperCase());
+        }
+      });
+  };
+
   return (
-    <div>
+    <div>  
       <Log>
         <div>
           <div>
@@ -43,14 +74,14 @@ const Login = () => {
           </div>
           <br />
           <div>
-            <Input type='email' placeholder='Enter Your Email' />
+            <Input type='email'  value={email} onChange={(e) => setEmail(e.target.value)} placeholder='Enter Your Email' />
             <br />
-            <Input type='password' placeholder='Enter Password' />
+            <Input type='password' value={password} onChange={(e) => setPassword(e.target.value)}placeholder='Enter Password' />
             <br />
-            <Button>
-              <Link to='/'>
+            <Button onClick={handleLogin}>
+              {/* <Link to='/'> */}
                 <h1>Login</h1>
-              </Link>
+              {/* </Link> */}
             </Button>
             <br />
           </div>
@@ -67,9 +98,11 @@ const Login = () => {
               </a>
             </p>
           </Label>
+        
         </div>
       </Log>
-    </div>
+      
+     </div>
   );
 };
 
