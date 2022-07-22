@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styled from 'styled-components';
-import { ToastContainer, toast } from "react-toastify";
+// import { ToastContainer, toast } from "react-toastify";
 import axios from "axios";
 import { Link } from "react-router-dom";
 
@@ -46,8 +46,8 @@ const Button = styled.button`
 const Signup = () => {
   const [signUpdata, setsignUpdata] = useState({});
 
-  const notify = (msg) => toast(msg);
-  const error = (msg) => toast.error(msg);
+  // const notify = (msg) => toast(msg);
+  // const error = (msg) => toast.error(msg);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -60,13 +60,13 @@ const Signup = () => {
       .post("https://salty-chamber-30466.herokuapp.com/auth/signup", signUpdata)
       .then((res) => {
         if (res.data.message) {
-          notify(res.data.message.toUpperCase());
+          // notify(res.data.message.toUpperCase());
         }
       })
       .catch((err) => {
-        if (err.response.status === 422) {
-          error(err.response.data.error.toUpperCase());
-        }
+        // if (err.response.status === 422) {
+        //   error(err.response.data.error.toUpperCase());
+        // }
       });
       alert("Signup Successful");
      
