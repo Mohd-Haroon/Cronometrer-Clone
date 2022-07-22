@@ -59,7 +59,7 @@ export const UserMainPage = () => {
             borderTopLeftRadius:"3px",
             borderTopRightRadius:"3px",
             color:"#B83805"
-          }} p="6px 20px 9px" mt="30px">Settings</Box>
+          }} p="6px 20px 9px" mt="30px" onClick={()=>navigate("settings")}>Settings</Box>
           <Box as="button" _focus={{
             border:"1px solid #E0E0DC",
             borderBottom:"1px solid #FBFBFA",

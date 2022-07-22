@@ -1,10 +1,27 @@
 import React from "react";
-import { Button, Input, Switch, Text } from "@chakra-ui/react";
+import {
+  Button,
+  FormControl,
+  FormLabel,
+  Input,
+  Modal,
+  ModalBody,
+  ModalCloseButton,
+  ModalContent,
+  ModalFooter,
+  ModalHeader,
+  ModalOverlay,
+  Switch,
+  Text,
+  useDisclosure,
+} from "@chakra-ui/react";
 import styles from "../../CssComponent/Settings.module.css";
 import { BsFillCloudArrowDownFill } from "react-icons/bs";
 import { ImBin } from "react-icons/im";
 
 export const Settings = () => {
+  const { isOpen, onOpen, onClose } = useDisclosure();
+
   return (
     <div className={styles.settingContainer}>
       <Text fontWeight="500" fontSize="2xl">
@@ -24,9 +41,32 @@ export const Settings = () => {
             value="beniwalanshu1412@gmail.com"
             readOnly="readOnly"
           />
-          <Button className={styles.updateBtn} variant="ghost">
+          <Button onClick={onOpen} className={styles.updateBtn} color="rgb(255,118,63)" variant="ghost">
             Update
           </Button>
+          <Modal isOpen={isOpen} onClose={onClose}>
+            <ModalOverlay />
+            <ModalContent>
+              <ModalHeader>Change Email Address</ModalHeader>
+              <ModalCloseButton />
+              <ModalBody pb={6}>
+                <FormControl>
+                  <FormLabel>Enter new email address</FormLabel>
+                  <Input value="abc@test.com" />
+                </FormControl>
+                <FormControl>
+                  <FormLabel>Enter new password</FormLabel>
+                  <Input value="******" />
+                </FormControl>
+              </ModalBody>
+              <ModalFooter>
+                <Button onClick={onClose}>Cancel</Button>
+                <Button colorScheme="blue" ml={3}>
+                  OK
+                </Button>
+              </ModalFooter>
+            </ModalContent>
+          </Modal>
         </div>
         <div>
           <p className={styles.emailP}>Password</p>
@@ -36,7 +76,7 @@ export const Settings = () => {
             value="***********"
             readOnly="readOnly"
           />
-          <Button className={styles.updateBtn} variant="ghost">
+          <Button color="rgb(255,118,63)" onClick={onOpen} className={styles.updateBtn} variant="ghost">
             Update
           </Button>
         </div>
@@ -80,14 +120,16 @@ export const Settings = () => {
         </Text>
       </div>
       <div className={styles.deleteBox}>
-        <BsFillCloudArrowDownFill  width="20%" fontSize="18px" />
+        <BsFillCloudArrowDownFill width="20%" fontSize="18px" />
         <div style={{ width: "50%" }}>
           <Text fontSize="sm" fontWeight="700">
             Export Data
           </Text>
           <Text fontSize="sm">Export all of your diary data to .csv files</Text>
         </div>
-        <Button width="30%" variant="ghost" color="rgb(255,118,63)" >Export Data</Button>
+        <Button width="30%" variant="ghost" color="rgb(255,118,63)">
+          Export Data
+        </Button>
       </div>
       <div className={styles.deleteBox}>
         <ImBin fontSize="18px" width="20%" />
@@ -99,7 +141,14 @@ export const Settings = () => {
             Permanently delete your account and all of your data.
           </Text>
         </div>
-        <Button width="30%" outline="1px solid rgb(255,118,63)" color="rgb(255,118,63)" variant="outline">Delete Account</Button>
+        <Button
+          width="30%"
+          outline="1px solid rgb(255,118,63)"
+          color="rgb(255,118,63)"
+          variant="outline"
+        >
+          Delete Account
+        </Button>
       </div>
     </div>
   );
