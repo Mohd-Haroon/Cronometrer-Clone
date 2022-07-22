@@ -16,17 +16,35 @@ import {
     Tr,Td,Thead,TableContainer
 } from "@chakra-ui/react";
 import {DatePick} from "./Datepicker"
+import {useDispatch,useSelector} from "react-redux";
+import {getData,postData} from "../../Redux/actiontypes"
 
 export const Diary = () => {
+    const {currentdata,success} = useSelector((store)=>store.diary);
+    const dispatch = useDispatch()
   const [datee,setDate] = React.useState(new Date())
+  const [maindata,setMainData] = React.useState({})
 
+  React.useEffect(()=>{
+    // get data after rendering
+    dispatch(getData())
+  },[dispatch])
+  
+  //data sending to post
+  const handlechange=(da)=>{
+    console.log("dateee",datee.toDateString())
+    let a = (datee.toDateString()).toString();
+    let b = {...da,date:a,energy:"100 kcal"}
+    console.log("diarymaindata",b)
+    postData(b,dispatch)
+  }
+    //date change callback
   const datechange=(date)=>{
-    // console.log("date1",date.getFullYear(),date.getMonth()+1,date.getDate())
+    //setting date from calender
     setDate(date)
-    // console.log("date2",datee.getFullYear(),datee.getMonth()+1,datee.getDate())
     console.log('dateeeee',datee.toDateString())
   }
-  console.log('dateeeeeout',datee.toDateString())
+
   return (
     <VStack border="1px solid white" w="80%" h="auto" mt="30px">
       <Flex w="100%" gap="10px">
@@ -35,7 +53,7 @@ export const Diary = () => {
         </VStack>
         <VStack   w="70%">
         <Box w="100%">
-            <AddFood/>
+            <AddFood handlechange={handlechange} />
             <Button color="#404040" fontSize="14px" fontWeight="700" p="4px 12px" textAlign="left" border="none" borderRadius="14px" mr="5px" >
                 <Image src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAbCAYAAABiFp9rAAABtElEQVR4Xq1W61HDMAzOCIzQEdgARnA26AawAWwAv5uUdoOyAWzQbkAuzl1/lg2oJNuJLT/iOnx3uqaxrE8vy6mqBRC780q08iDa/gLyA89PXGcxxO5yJxp5rFv5Z4tohmeuuwhA8shJFJE8ct1FgFQJTqKl47pZwBTVH/LByPT+vKqb/pcTQZ3e7f2zMIXmhrSxA6aOorLJmv4THVP7sYb9m/kfhNgOa248JESIDiEp/I771TtqFOrGzXBvmddKIZJGfivxUzUSbuULiW53Zx1scp4KFrqJYEoFArx85SRJAceCJAZkECJw3lHNXE9TArp7O53ZwOi4MS2nsU5wWFW9Eg2QQuxwkuewxvWLUdt1swWi5LrFiDYAFrqkBiGkGgAd4PrFwM7hBFq6ooJjr/M0pBpARTQzXjhwPIQ2w/+TZRifvYZQF17mZUejxd/sDFMzq9RB9sdQVr10ijxvJ2J37Oub1SEk53LTiKc64G206HRPuWR7rhMFeQsRjJtnTj0/Y3P6Huj8pKauBYzaSvMXX/838G+HXAeLYHcu3aiRui4GfaiYqHAG3lqrW4BNRBKJ5grd7Oe2o+DGBQAAAABJRU5ErkJggg==" />
                 <Text ml="7px">ADD EXERCISE</Text>
@@ -53,7 +71,7 @@ export const Diary = () => {
         {/* //table */}
         <Box border="1px solid #e7e9ea" borderRadius="5px" m="13px 0px 5px 0px" minHeight="300px" w="100%" overflow="visible">
           <TableContainer w="100%">
-            <Table    borderCollapse="collapse" textAlign="left" color="#222" border="1px solid #eee" borderRadius="2px">
+            <Table textAlign="left" color="#222" border="1px solid #eee" borderRadius="2px">
                                     <Thead lineHeight="15px">
                                         <Tr backgroundColor="#eee">
                                             <Td backgroundColor="#eeeeee">
@@ -80,28 +98,34 @@ export const Diary = () => {
                                             
                                     </Thead>
                                     <Tbody>
-                                    <Tr >
-                                            <Td>
-                                                <Box h="10px" whitespace="nowrap">
-                                                    Description
-                                                </Box>
-                                            </Td>
-                                            <Td textAlign="right">
-                                                <Box h="10px" whitespace="nowrap">
-                                                    Amount
-                                                </Box>
-                                            </Td>
-                                            <Td textAlign="left">
-                                                <Box h="10px" whitespace="nowrap">
-                                                    Unit
-                                                </Box>
-                                            </Td>
-                                            <Td textAlign="right">
-                                                <Box h="10px" whitespace="nowrap">
-                                                    Energy(kcal)
-                                                </Box>
-                                            </Td>
-                                        </Tr>
+                                        {
+                                            success && currentdata.map((el)=>{
+                                                return <Tr key={el._id}>
+                                                            <Td>
+                                                                <Box h="10px" whitespace="nowrap">
+                                                                    {el.description}
+                                                                </Box>
+                                                            </Td>
+                                                            <Td textAlign="right">
+                                                                <Box h="10px" whitespace="nowrap">
+                                                                {el.amount}
+                                                                </Box>
+                                                            </Td>
+                                                            <Td textAlign="left">
+                                                                <Box h="10px" whitespace="nowrap">
+                                                                {el.unit}
+                                                                </Box>
+                                                            </Td>
+                                                            <Td textAlign="right">
+                                                                <Box h="10px" whitespace="nowrap">
+                                                                {el.energy}
+                                                                </Box>
+                                                            </Td>
+                                                        </Tr>
+                                            })
+                                            
+                                        }
+                                        
                                     </Tbody>
             </Table>
           </TableContainer>

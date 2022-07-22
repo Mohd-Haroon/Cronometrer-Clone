@@ -9,6 +9,7 @@
     width: 100%;
     justify-content: center;
     flex-direction: column;
+    margin-top: 30px;
 }
 .rowb{
     width: 100%;
@@ -26,7 +27,7 @@
     font-weight: 600;
     line-height: 1.25em;
     box-sizing: border-box;
-   
+ 
 }
 h2{
     display: block;
@@ -58,4 +59,403 @@ h5{
     margin-block-end: 1.67em;
     margin-inline-start: 0px;
     margin-inline-end: 0px;
+}
+.Bolgsmain{
+    display: flex;
+    gap: 20px;
+    width: 70%;
+    margin: auto;
+    margin-top:10px;
+    
+}
+.subblog{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    box-shadow: 0 13px 18px 0 rgb(0 0 0 / 10%);
+    width: 100%;
+}
+.vdo iframe{
+    width: 100%;
+    height: 430px;
+    display: block;
+    border: 15px solid whitesmoke;
+}
+.maidatai h2{
+    color: black;
+    font-weight: 600;
+    font-size: larger;
+    margin-bottom: 10px;
+}
+.picda{
+    display: flex;
+   
+    
+    gap: 20px;
+}
+.datapa{
+   position: inherit;
+   margin: 30px;
+}
+.imgdata img{
+  width: 150px;
+  height: 190px;
+  border: 5px solid wheat;
+}
+.datapa h3{
+    color: black;
+    font-weight: 700;
+    font-size: xx-large;
+    margin-bottom: 10px;
+}
+.datapa p{
+    font-size: large;
+    color: black;
+    font-weight: 400;
+}
+.datapa button{
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: .2px;
+    fill: #fff;
+    color: #fff;
+    background-color: #ff763f;
+    padding: 16px 60px;
+    margin-top: 20px;
+}
+
+.creda{
+    height: 400px;
+    width: 100%;
+    background-color:#f8f8f8;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 60px;
+}
+.subcre{
+    justify-content: center;
+
+}
+.subcre h2{
+    font-family: "Open Sans",Sans-serif;
+    font-size: 2.74em;
+     margin-top: 30px;
+    line-height: 1.25em;
+    color: #404040;
+    font-weight: 700;
+    text-align: center;
+
+}
+.chilcra{
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+.btncre{
+    margin: 0;
+    border: 0;
+    padding: 0;
+     display: flex;
+    vertical-align: middle;
+    white-space: normal;
+    background: none;
+    line-height: 1; 
+    
+     min-width: 0;
+    flex-basis: 100%; 
+    
+    color: #55595c;
+    font-family: "Open Sans",Sans-serif;
+    font-size: 18px;
+  
+  
+}
+.btncre input{
+   padding: 5px 10px;
+   width: 80%;
+   height: 70px;
+   margin-left: 130px;
+}
+.chilcra p{
+    color: #ff763f;
+    fill: #ff763f;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: 21px;
+    font-weight: 600;
+    letter-spacing: 1px
+}
+.datasasub{
+    margin: auto;
+    width: 80%;
+
+}
+.realdata{
+    display: flex;
+    gap: 30px;
+    margin-top: 140px;
+
+}
+.havedaa{
+    display: flex;
+    gap: 40px;
+    flex-direction: column;
+
+}
+.havedaa h2{
+    color: #404040;
+    font-family: "Open Sans",Sans-serif;
+    font-size: 50px;
+    font-weight: 700;
+    line-height: 1.2em;
+    padding: 0;
+    margin: 0;
+}
+.havedaa p:last-child{
+    margin-top: 0;
+    margin-bottom: 0.9rem;
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    color: #404040;
+    font-family: "Open Sans",Sans-serif;
+    font-size: 25px;
+    font-weight: 300;
+}
+.havedaa button{
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: .2px;
+    fill: #fff;
+    color: #fff;
+    background-color: #ff763f;
+    padding: 16px 60px;
+    border-radius: 4px;
+    width: 40%;
+}
+.havedaa p:first-child{
+    color: #ff763f;
+    font-family: "Open Sans",Sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    
+}
+.fontad{
+    height: 250px;
+    background-color: #ff763f;
+    color: white;
+}
+.datafo{
+    margin: auto;
+    display: flex;
+    gap: 20px;
+    justify-content: space-evenly;
+    width: 70%;
+   
+   
+}
+.lopo p{
+    font-family: "Open Sans",Sans-serif;
+    font-size: 1.41em;
+    font-weight: 400;
+    line-height: 1.5em;
+    padding: 0;
+    margin-top: 10px;
+    /* margin: 0; */
+}
+.lopo h2{
+    font-family: "Open Sans",Sans-serif;
+    font-size: 2.2em;
+    font-weight: 700;
+    line-height: 1.25em;
+}
+.fonbtn button{
+    
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: .2px;
+    fill: #ff763f;
+    color: #ff763f;
+    background-color: #fff;
+    padding: 16px 60px;
+    border-radius: 4px;
+    font-family: "Open Sans",Sans-serif;
+}
+.lopo {
+   /* justify-content: center; */
+   margin-top: 100px;
+}
+.fonbtn{
+    margin-top: 100px;
+}
+.kop{
+    justify-content: space-evenly;
+    display: flex;
+    gap: 40px;
+    margin-top: 50px;
+}
+.kll p{
+    color: #ff763f;
+    font-family: "Open Sans",Sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+}
+.kll h2{
+    color: #404040;
+    font-family: "Open Sans",Sans-serif;
+    font-size: 45px;
+    font-weight: 700;
+    line-height: 1.25em;
+}
+.popimg{
+    display: flex;
+    gap: 80px;
+   justify-content: center;
+}
+.subpop{
+    height: 620px;
+    width: 500px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    /* margin: auto; */
+   margin-top: 20px;
+    margin-left: -30px;
+}
+.chiloimg{
+    height: 400px;
+
+}
+.chiloimg img{
+    height: 400px;
+    width: 100%;
+   border: 15px solid white;
+}
+.subtips{
+    margin: 30px;
+}
+.subtips h2{
+    color: #404040;
+    font-family: "Open Sans",Sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    margin: 10px;
+}
+.subtips p:first-child{
+    color: #5c5c5c;
+    font-family: "Open Sans",Sans-serif;
+    line-height: 1.3em;
+    font-size: 12px;
+    margin: 20px;
+   
+}
+.subtips p:last-child{
+    color:  #5c5c5c;
+    font-family: "Open Sans",Sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    margin: 10px;
+    line-height: 1.5em;
+}
+.mnbv{
+    width: 80%;
+    margin: auto;
+    margin-top: 40px;
+   margin-bottom: 20px;
+}
+.kil{
+    background-image: url("https://cronometer.com/blog/wp-content/uploads/2021/07/gabin-vallet-J154nEkpzlQ-unsplash-scaled.jpg");
+   height: 500px;
+   margin-top: 10px;
+    max-width: 100%;
+    border: none;
+    border-radius: 10px
+   
+}
+.kil img{
+    vertical-align: middle;
+    display: inline-block;
+    /* margin: auto; */
+   margin-left: 300px;
+   margin-top: 250px;
+   
+ 
+}
+.mnbv p{
+    color: #ff763f;
+    font-family: "Open Sans",Sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+}
+.mnbv h2{
+    color: #404040;
+    font-family: "Open Sans",Sans-serif;
+    font-weight: 700;
+    line-height: 1.25em;
+    font-size: 2.90em;
+    margin-top: 20px;
+}
+.mnbv h4{
+    margin-top: 0;
+    margin-bottom: 0.9rem;
+    overflow-wrap: break-word;
+    display: block;
+    font-size: 1.40em;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+.mnbv button{
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: .2px;
+    fill: #fff;
+    color: #fff;
+    background-color: #ff763f;
+    padding: 16px 60px;
+    border-radius: 4px;
+
+}
+.lasapics{
+    /* width: 80%; */
+    /* margin: auto; */
+    display: flex;
+    justify-content: center;
+    gap: 90px;
+    /* height: 400px; */
+    margin-top: 170px;
+}
+.conpicn img{
+    width: 600px
+}
+.datanm h1{
+    color: #5c5c5c;
+    font-family: "Open Sans",Sans-serif;
+    font-size: 2.2em;
+    font-weight: 400;
+    line-height: 1.25em;
+    font-weight: 700;
+    justify-content: center;
+    text-align: center;
+    margin-top: 90px;
+}
+.datanm button{
+    font-size: 22px;
+    font-weight: 600;
+    fill: #fff;
+    color: #fff;
+    background-color: #ff763f;
+    border-radius: 5px;
+    padding: 16px 60px;
+    margin-top: 40px;
+    margin-left: 90px;
+}
+.datanm p{
+    margin-top: 40px;
+    margin-left: 190px;
+    text-decoration: underline;
 }

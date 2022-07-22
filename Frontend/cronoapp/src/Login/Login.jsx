@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import { ToastContainer, toast } from "react-toastify";
+// import { ToastContainer, toast } from "react-toastify";
 import axios from 'axios';
 
 const Log = styled.div`
@@ -39,8 +39,8 @@ const Login = ({ setState }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const notify = (msg) => toast(msg);
-  const error = (msg) => toast.error(msg);
+  // const notify = (msg) => toast(msg);
+  // const error = (msg) => toast.error(msg);
   const handleLogin = () => {
     axios
       .post("https://salty-chamber-30466.herokuapp.com/auth/login", {
@@ -49,16 +49,19 @@ const Login = ({ setState }) => {
       })
       .then((res) => {
         alert("Loging Successful");
-        console.log(res.data);
-        if (res.data) {
-          console.log("hy")
-          localStorage.setItem("user", JSON.stringify(res.data.email));
-          localStorage.setItem("token", JSON.stringify(res.data.id));
+        console.log(res);
+        if (res.data.message) {
+          // notify(res.data.message.toUpperCase());
+          localStorage.setItem("user", JSON.stringify(res.data.userLogin));
+          localStorage.setItem("token", JSON.stringify(res.data.token));
           setState(false);
         }
       })
       .catch((err) => {
-        
+        // alert("Wrong credentials");
+        // if (err.response.status === 422 || 404) {
+        //   error(err.response.data.error.toUpperCase());
+        // }
       });
   };
 
