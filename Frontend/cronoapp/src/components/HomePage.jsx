@@ -33,6 +33,9 @@ const HomePage = () => {
     {/* homePaage */}
 
     <div className={styles.homeDivsez}>
+
+    <div className={styles.secimg}><img src="https://cdn1.cronometer.com/2021/landing/cronometer-hero-graphic.svg" alt="" /></div>
+    
         <div className={styles.h2div}>
             <h2>Eat smarter.<br/>Live better.</h2>
             <h4  className={styles.h4div}>Track your calories, exercise,<br/>biometrics and health data.</h4>
@@ -41,7 +44,7 @@ const HomePage = () => {
 
             <p style={{marginTop:"40px"}}>Already have an account? <Link to="/login" style={{textDecoration:"underline"}}> Log in.</Link></p>
         </div>
-        <div className={styles.secimg}><img src="https://cdn1.cronometer.com/2021/landing/cronometer-hero-graphic.svg" alt="" /></div>
+        
     </div>
 
     <div className={styles.parentDiv}>
