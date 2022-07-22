@@ -1,0 +1,219 @@
+body{
+    font-family: 'Open Sans', sans-serif;
+    color: #333;
+    font-size: 100%;
+    line-height: 1em;
+}
+
+*{
+    box-sizing: border-box;
+}
+div{
+    display: block;
+}
+
+.about{
+    padding-right: 2%;
+    padding-left: 2%;
+}
+.subabout{
+    max-width: 1140px;
+    flex-direction: column;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+.aboutT{
+    display: flex;
+    margin-top: 6%;
+    margin-bottom: 4%;
+    padding-right: 0px;
+    padding-left: 0px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+
+}
+ .heh6{
+    /* display: block; */
+    /* font-size: 0.67em; */
+    /* margin-block-start: 2.33em;
+    margin-block-end: 2.33em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px; */
+    margin-top: 0px;
+    margin-bottom: 0px;
+    color: #ff763f;
+    font-size: 1.61em;
+    line-height: 1.5em;
+    font-weight: bolder;
+    letter-spacing: 2px;
+    /* text-transform: uppercase; */
+}
+.h2data{
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-family: 'Open Sans', sans-serif;
+    color: #4f4e53;
+    font-size: 2.74em;
+    line-height: 1.3em;
+    font-weight: 600;
+    
+}
+.pp{
+    margin-bottom: 0px;
+    font-family: 'Open Sans', sans-serif;
+    color: #404040;
+    font-size: 1.225em;
+    line-height: 1.8em;
+    margin-top: 0;
+    letter-spacing: 0.7px;
+}
+.teams{
+    display: flex;
+    margin-top: 6%;
+    padding-right: 2%;
+    padding-left: 2%;
+    justify-content: center;
+    align-items: center;
+}
+.imc{
+    display: flex;
+    flex-direction: column;
+    align-items: center
+}
+.imc img{
+    width: 80%;
+    border-radius: 8px;
+    max-width: 100%;
+    vertical-align: middle;
+    display: inline-block;
+}
+.who{
+    margin-top: 6%;
+    padding-right: 2%;
+    padding-left: 2%;  
+}
+.contwho{
+    display: flex;
+    justify-content: center;
+    max-width: 1140px;
+    flex-direction: column;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+.whoheading{
+    display: flex;
+    margin-bottom: 4%;
+    padding-right: 0px;
+    padding-left: 0px;
+ 
+    flex-direction: column;
+    justify-content: center;
+    
+    align-items: center;
+    text-align: left;
+}
+.parawi{
+    flex-direction: row; 
+    align-items: center; 
+}
+
+/* .paraher{
+    padding-top: 4%;
+  
+    align-items: center;
+   
+    padding-bottom: 4%;
+    border-style: solid none none;
+  
+}
+.mainpara2{
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-family: 'Open Sans', sans-serif;
+    color: #4f4e53;
+    font-size: 1.41em;
+    line-height: 1.5em;
+    font-weight: 400;
+    text-align: left;
+    letter-spacing: normal;
+    text-transform: none;
+}
+.pbtn{
+    padding: 1% 6%;
+    border: 1px solid #ff763f;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 1px 1px 10px 0 rgb(0 0 0 / 15%);
+    font-family: 'Open Sans', sans-serif;
+    color: #ff763f;
+    font-size: 1.25em;
+    line-height: 1.25em;
+    font-weight: 600;
+    text-align: center;
+    cursor: pointer;
+    width: auto;
+    display: inline-block;
+}
+.power{
+    width: auto;
+} */
+
+
+.para{
+    margin-top: 4%;
+    padding-right: 11%;
+    padding-left: 11%;
+    padding-top: 4%;
+
+
+}
+
+.power{
+    display: flex;
+    margin-top: 4%;
+    justify-content: center;
+    margin-top: 40px;
+}
+.pbtn{
+    padding: 1% 6%;
+    border: 1px solid #ff763f;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 1px 1px 10px 0 rgb(0 0 0 / 15%);
+    font-family: 'Open Sans', sans-serif;
+    color: #ff763f;
+    font-size: 1.25em;
+    line-height: 1.25em;
+    font-weight: 600;
+    text-align: center;
+    /* display: inline-block;
+    text-decoration: none; */
+    cursor: pointer;
+    margin-bottom: 50px;
+   
+}
+.pbtn:hover{
+    background-color: #f8f8f8;
+}
+
+.mainpara2{
+    margin-top: 0px;
+    margin-bottom: 20px;
+    font-family: 'Open Sans', sans-serif;
+    color: #4f4e53;
+    font-size: 1.41em;
+    line-height: 1.5em;
+    font-weight: 400;
+    text-align: left;
+    letter-spacing: 0.8px;
+    text-transform: none;
+     justify-content: center;
+     text-align: center;
+     font-weight: 400;
+    
+   
+ }

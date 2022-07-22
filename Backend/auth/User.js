@@ -21,12 +21,12 @@ const UserSchema = new Schema({
         type: String,
         required: true,
       },
-    //   confirm_password : String,
-    // gender: { type: String, enum: ['Male', 'Female'] },
-    // dob: String,
-    // height: String,
-    // weight: String,
-    // token: String,
+      confirm_password : String,
+    gender: { type: String, enum: ['Male', 'Female'] },
+    dob: String,
+    height: String,
+    weight: String,
+    token: String,
 })
 
 

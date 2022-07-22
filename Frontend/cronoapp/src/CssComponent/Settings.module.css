@@ -1,0 +1,63 @@
+.settingContainer{
+    border: 1px solid black;
+    width: 85%;
+    margin-top: 40px;
+    height: 500px;
+}
+
+.settingsChild{
+    margin-top: 20px;
+    border: 1px solid rgb(224,224,220);
+    width: 100%;
+    height: 35px;
+    background-color: rgb(251,251,250);
+    padding-left: 1%;
+    display: flex;
+    align-items: center;
+}
+
+.settingsChild2{
+    width: 60%;
+    border: 1px solid red;
+    height: 300px;
+    margin: auto;
+    margin-top: 2%;
+}
+
+.settingsChild2>div:nth-child(1),.settingsChild2>div:nth-child(2){
+    width: 100%;
+    height: 40px;
+    /* margin-top: 10px; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.updateBtn{
+    color: rgb(237,130,41);
+    width: 13%;
+    height: 70%;
+}
+
+/* .updateBtn :hover{
+    background: rgb(224,224,220);
+} */
+
+.emailP{
+    width: 10%;
+}
+
+.settingsChild2 input{
+    font-size: 16px;
+}
+
+.twoAuth{
+    width: 100%;
+    border: 1px solid blue;
+}
+
+.twoAuthP{
+    font-size: 13px;
+    line-height: 12px;
+    margin-top: 1%;
+}
