@@ -49,19 +49,16 @@ const Login = ({ setState }) => {
       })
       .then((res) => {
         alert("Loging Successful");
-        console.log(res);
-        if (res.data.message) {
-          notify(res.data.message.toUpperCase());
-          localStorage.setItem("user", JSON.stringify(res.data.userLogin));
-          localStorage.setItem("token", JSON.stringify(res.data.token));
+        console.log(res.data);
+        if (res.data) {
+          console.log("hy")
+          localStorage.setItem("user", JSON.stringify(res.data.email));
+          localStorage.setItem("token", JSON.stringify(res.data.id));
           setState(false);
         }
       })
       .catch((err) => {
-        alert("Wrong credentials");
-        if (err.response.status === 422 || 404) {
-          error(err.response.data.error.toUpperCase());
-        }
+        
       });
   };
 
