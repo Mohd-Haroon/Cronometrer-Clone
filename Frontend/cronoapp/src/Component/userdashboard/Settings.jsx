@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Button,
   FormControl,
@@ -22,6 +22,39 @@ import { ImBin } from "react-icons/im";
 export const Settings = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
+  const [val, setVal] = useState("");
+  const [update, setUpdate] = useState({});
+
+  const handleChange = (e) => {
+    setVal(e.target.value);
+    const { name, value } = e.target;
+    setUpdate({
+      ...update,
+      [name]: value,
+    });
+  };
+
+  const handleUpdate = () => {
+    const payload = JSON.stringify(update);
+    fetch("http://localhost:8080/auth/user/62d8f23bf5001afbaff24777", {
+      method: "PATCH",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: payload,
+    })
+      .then((res) => res.json)
+      .catch((err) => console.log(err));
+  };
+
+  const handleDelete = () => {
+    fetch("http://localhost:8080/auth/user/62d8f23bf5001afbaff24777", {
+      method: "DELETE",
+    })
+      .then((res) => console.log(res))
+      .catch((err) => console.log(err));
+  };
+
   return (
     <div className={styles.settingContainer}>
       <Text fontWeight="500" fontSize="2xl">
@@ -41,7 +74,12 @@ export const Settings = () => {
             value="beniwalanshu1412@gmail.com"
             readOnly="readOnly"
           />
-          <Button onClick={onOpen} className={styles.updateBtn} color="rgb(255,118,63)" variant="ghost">
+          <Button
+            onClick={onOpen}
+            className={styles.updateBtn}
+            color="rgb(255,118,63)"
+            variant="ghost"
+          >
             Update
           </Button>
           <Modal isOpen={isOpen} onClose={onClose}>
@@ -52,16 +90,16 @@ export const Settings = () => {
               <ModalBody pb={6}>
                 <FormControl>
                   <FormLabel>Enter new email address</FormLabel>
-                  <Input value="abc@test.com" />
+                  <Input name="email" onChange={handleChange} />
                 </FormControl>
                 <FormControl>
                   <FormLabel>Enter new password</FormLabel>
-                  <Input value="******" />
+                  <Input name="password" onChange={handleChange} />
                 </FormControl>
               </ModalBody>
               <ModalFooter>
                 <Button onClick={onClose}>Cancel</Button>
-                <Button colorScheme="blue" ml={3}>
+                <Button onClick={handleUpdate} colorScheme="blue" ml={3}>
                   OK
                 </Button>
               </ModalFooter>
@@ -76,7 +114,12 @@ export const Settings = () => {
             value="***********"
             readOnly="readOnly"
           />
-          <Button color="rgb(255,118,63)" onClick={onOpen} className={styles.updateBtn} variant="ghost">
+          <Button
+            color="rgb(255,118,63)"
+            onClick={onOpen}
+            className={styles.updateBtn}
+            variant="ghost"
+          >
             Update
           </Button>
         </div>
@@ -146,6 +189,7 @@ export const Settings = () => {
           outline="1px solid rgb(255,118,63)"
           color="rgb(255,118,63)"
           variant="outline"
+          onClick={handleDelete}
         >
           Delete Account
         </Button>
