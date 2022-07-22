@@ -8,7 +8,7 @@ import Login from "../Login/Login";
 import Support from "../components/Support";
 import {UserMainPage} from "../Component/userdashboard/Mainpage"
 import {Diary} from "../Component/userdashboard/Diary";
-import { Home } from '../Login/Home';
+// import { Home } from '../Login/Home';
 import Signup from '../Login/Signup';
 import { Settings } from "../Component/userdashboard/Settings";
 

@@ -48,7 +48,7 @@ const Login = () => {
             <Input type='password' placeholder='Enter Password' />
             <br />
             <Button>
-              <Link to='/'>
+              <Link to='/login'>
                 <h1>Login</h1>
               </Link>
             </Button>
