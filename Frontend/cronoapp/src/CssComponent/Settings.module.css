@@ -1,5 +1,5 @@
 .settingContainer{
-    border: 1px solid black;
+    /* border: 1px solid black; */
     width: 85%;
     margin-top: 40px;
     height: 500px;
@@ -18,7 +18,7 @@
 
 .settingsChild2{
     width: 60%;
-    border: 1px solid red;
+    /* border: 1px solid red; */
     height: 300px;
     margin: auto;
     margin-top: 2%;
@@ -53,11 +53,29 @@
 
 .twoAuth{
     width: 100%;
-    border: 1px solid blue;
+    /* border: 1px solid blue; */
 }
 
 .twoAuthP{
     font-size: 13px;
     line-height: 12px;
     margin-top: 1%;
+}
+.logoutBtn{
+    width: 30%;
+    margin-left: 35%;
+    margin-top: 3%;
+}
+.logoutBtn:hover{
+    background-color: rgb(255,118,63);
+}
+.deleteBox{
+    width: 60%;
+    height: 50px;
+    /* border: 1px solid red; */
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
 }
