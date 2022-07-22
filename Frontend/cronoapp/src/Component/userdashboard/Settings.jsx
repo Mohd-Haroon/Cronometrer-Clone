@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   Button,
   FormControl,
@@ -18,12 +18,22 @@ import {
 import styles from "../../CssComponent/Settings.module.css";
 import { BsFillCloudArrowDownFill } from "react-icons/bs";
 import { ImBin } from "react-icons/im";
+import { useNavigate } from "react-router-dom";
 
 export const Settings = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   const [val, setVal] = useState("");
   const [update, setUpdate] = useState({});
+
+  const userId = localStorage.getItem("userId");
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!userId) {
+      navigate("/");
+    }
+  }, []);
 
   const handleChange = (e) => {
     setVal(e.target.value);
@@ -36,7 +46,7 @@ export const Settings = () => {
 
   const handleUpdate = () => {
     const payload = JSON.stringify(update);
-    fetch("http://localhost:8080/auth/user/62d8f23bf5001afbaff24777", {
+    fetch(`https://salty-chamber-30466.herokuapp.com/auth/user/${userId}`, {
       method: "PATCH",
       headers: {
         "content-type": "application/json",
@@ -48,11 +58,16 @@ export const Settings = () => {
   };
 
   const handleDelete = () => {
-    fetch("http://localhost:8080/auth/user/62d8f23bf5001afbaff24777", {
+    fetch(`https://salty-chamber-30466.herokuapp.com/auth/user/${userId}`, {
       method: "DELETE",
     })
-      .then((res) => console.log(res))
+      .then((res) => navigate("/"))
       .catch((err) => console.log(err));
+  };
+
+  const handleLogout = () => {
+    localStorage.removeItem("userId");
+    navigate("/");
   };
 
   return (
@@ -153,6 +168,7 @@ export const Settings = () => {
           className={styles.logoutBtn}
           colorScheme="teal"
           size="sm"
+          onClick={handleLogout}
         >
           Logout
         </Button>
