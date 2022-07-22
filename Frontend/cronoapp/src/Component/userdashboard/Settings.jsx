@@ -26,7 +26,7 @@ export const Settings = () => {
   const [val, setVal] = useState("");
   const [update, setUpdate] = useState({});
 
-  const userId = localStorage.getItem("userId");
+  const userId = localStorage.getItem("token");
   const navigate = useNavigate();
 
   useEffect(() => {
