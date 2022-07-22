@@ -7,7 +7,12 @@ import {
 import thunk from "redux-thunk";
 
 // import reducer and add into root reducer
-const rootReducer = combineReducers({});
+import {dataRedcer} from "./datareducer"
+
+
+const rootReducer = combineReducers({
+  diary:dataRedcer
+});
 
 const composeEnhancers =
   typeof window === "object" && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
