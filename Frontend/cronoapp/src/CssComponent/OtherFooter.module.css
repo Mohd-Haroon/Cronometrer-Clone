@@ -1,0 +1,142 @@
+.mainFot{
+    margin: 60px auto 0;
+    width: 100%;
+}
+.fotnav{
+    margin: 20px auto;
+    width: 100%;
+    text-align: center;
+}
+nav{
+    display: block
+}
+li{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-align: -webkit-match-parent;
+    margin-left: 20px;
+    font-size: larger;
+}
+.fotnav ul li .m{
+    font-weight: 600;
+    color: #4F4E53;
+    cursor: pointer;
+    border-radius: 6px;
+    text-decoration: none;
+    padding: 2px 20px;
+}
+.fotnav ul{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+.fotnav ul li{
+    display: inline-block
+    
+}
+ul{
+    display: block;
+    
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+}
+.org{
+    height: 7px;
+    background: #FF763F;
+    border-radius: 50%;
+    height: 6px;
+    width: 6px;
+    margin: 0 0 2px 0;
+    display: block;
+}
+.mainfotm{
+    width: 100%;
+    background: #4F4E53;
+    padding: 30px 0 60px;
+    height: 200px;
+}
+div {
+    display: block;
+}
+.left{
+    width: 30%;
+    float: left;
+}
+.appl{
+    padding: 0 0 0 12px;
+    display: flex;
+}
+.appl img{
+    width: 30%;
+}
+.middle{
+    width: 40%;
+    float: left;
+    text-align: center;
+    color: #fff;
+    font-size: 10px;
+}
+.middle div{ 
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer
+}
+.middle img{
+    width: 200px;
+    display: block;
+    margin-left: 200px;
+    margin-bottom: 15px;
+   
+}
+p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    
+}
+.rigth{
+    width: 30%;
+    float: left;
+
+}
+.mulinl{
+    text-align: right;
+    margin: 15px 30px 0 0
+}
+
+.NavBarCart {
+    font-size: 17px;
+    width: 35px;
+    height: 33px;
+    border-radius: 50%;
+    line-height: 40px;
+    border: 2px solid white;
+    cursor: pointer;
+    justify-content: center;
+    margin-bottom: 40px;
+  }
+
+  .icimg2{
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+.icimg2 img{
+    width: 13%;
+}
+.logos{
+    color: white;
+   display: flex;
+   margin-left: auto;
+   margin-right: auto;
+   max-width: 940px;
+   justify-content: center;
+   gap:20px
+}
