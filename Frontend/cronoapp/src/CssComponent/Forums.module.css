@@ -1,0 +1,24 @@
+.hoec{
+    margin: auto;
+    /* justify-content: center; */
+}
+.hoec h2{
+    font-size: xx-large;
+    color: black;
+    font-family: inherit;
+    font-weight: 700;
+}
+.hoec input{
+    width: 700px;
+    padding: 10px;
+    color: aliceblue;
+    border: 1px solid black;
+    margin-top: 10px;
+}
+.hoec div{
+    margin-top: 50px;
+
+    text-align: center;
+    
+   
+}

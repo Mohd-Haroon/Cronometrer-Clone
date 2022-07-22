@@ -37,7 +37,7 @@ const HomePage = () => {
             <h2>Eat smarter.<br/>Live better.</h2>
             <h4  className={styles.h4div}>Track your calories, exercise,<br/>biometrics and health data.</h4>
 
-            <button className={styles.btn2}>Sign Up-it's Free!</button>
+           <Link to="/signup"> <button className={styles.btn2}>Sign Up-it's Free!</button></Link>
 
             <p style={{marginTop:"40px"}}>Already have an account? <Link to="/login" style={{textDecoration:"underline"}}> Log in.</Link></p>
         </div>
@@ -209,7 +209,7 @@ const HomePage = () => {
             <h4>Find out if you're getting the vitamins and <br /> minerals you need with our food diary app.</h4>
            
         </div>
-        <button className={styles.btn3}>Sign Up - it's Free!</button>
+       <Link to="/signup"> <button className={styles.btn3}>Sign Up - it's Free!</button></Link>
     </div>
     
 
@@ -263,7 +263,7 @@ const HomePage = () => {
 " alt="" />
          <h4  className={styles.gridh4}>Cronometer tracks EVERYTHING! ... It's easy to use and links with my FitBit.</h4>
          <div className={styles.qimage}>
-         <img src="https://cdn1.cronometer.com/2021/landing/android-icon.svg" alt="" />
+        <img src="https://cdn1.cronometer.com/2021/landing/android-icon.svg" alt="" />
          </div>
       </div>
     </div>

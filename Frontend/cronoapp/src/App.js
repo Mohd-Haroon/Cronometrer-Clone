@@ -10,11 +10,11 @@ import Blogs from "./components/Bolgs";
 function App() {
   return (
     <div className="App" style={{backgroundColor:"white"}}>
-      {/* <AllRoutes/> */}
+      <AllRoutes/>
       {/* <About/> */}
       {/* <OTherFooter/> */}
       {/* <Support/> */}
-      <Blogs/>
+      {/* <Blogs/> */}
     </div>
   );
 }
