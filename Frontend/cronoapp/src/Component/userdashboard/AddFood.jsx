@@ -20,11 +20,11 @@ import {
     Text,
     Table,
     Tbody,
-    Tr,Td,TableContainer
+    Tr,Td,TableContainer,Input 
   } from "@chakra-ui/react";
   import {AddFooddata} from "./data"
   
-  function AddFood() {
+  function AddFood({handlechange}) {
     const { isOpen, onOpen, onClose } = useDisclosure()
     const [data,setData] = React.useState({})
     const [opn,setCls] = React.useState(false)
@@ -38,10 +38,10 @@ import {
         <Modal isOpen={isOpen} onClose={onClose} size="xl" >
           <ModalOverlay />
           <ModalContent >
-            <ModalHeader backgroundColor="#f8f8f8" boxShadow="0px 3px 6px #d4d4d4" p="15px 0px 15px 15px" >Add Food To Diary</ModalHeader>
-            <ModalCloseButton />
-            <ModalBody>
-                <VStack>
+            <ModalHeader backgroundColor="#f8f8f8" boxShadow="0px 3px 6px #d4d4d4" p="15px 0px 15px 15px" color="#5c5c5c" >Add Food To Diary</ModalHeader>
+            <ModalCloseButton color="#5c5c5c" />
+            <ModalBody backgroundColor="#f8f8f8">
+                <VStack color="#5c5c5c">
                     <HStack w="100%" ml="-50px" mr="-10px" borderTop="1px solid #eee" borderBottom="1px solid #c6c6c6" pl="8px" pt="15px" mt="5px" fontSize="12px" align="left" backgroundColor="#f7f7f7">
                         <Box as="button" pl="7px" pr="7px"  _focus={{
                             backgroundColor:"white",
@@ -103,23 +103,27 @@ import {
                     <Box w="100%" border="1px solid #eee" borderRadius="6px" m="3px 6px 1px 6px">
                         <Box fontSize="14px" w="100%" overflow="auto" position="relative" h="15em">
                             <TableContainer w="100%">
-                                <Table  variant='striped' colorScheme='#f7f7f7'  borderCollapse="collapse" textAlign="left" color="#222" border="1px solid #eee" borderRadius="2px">
+                                <Table  variant='striped' colorScheme='#f7f7f7' textAlign="left" color="#222" border="1px solid #eee" borderRadius="2px">
                                     <Tbody lineHeight="15px">
                                         <Tr >
-                                            <Td >
-                                                <Box h="10px" whitespace="nowrap">
+                                            <Td backgroundColor="#eeeeee" >
+                                                <Box  backgroundColor="#eeeeee" h="10px" whitespace="nowrap">
                                                     Description
                                                 </Box>
                                             </Td>
-                                            <Td>
-                                                <Box h="10px" whitespace="nowrap">
+                                            <Td  backgroundColor="#eeeeee">
+                                                <Box  backgroundColor="#eeeeee" h="10px" whitespace="nowrap">
                                                     Source
                                                 </Box>
                                             </Td>
                                         </Tr>
                                             {
                                                 AddFooddata.map((item,index)=>{
-                                                    return <Tr key={index}>
+                                                    return <Tr key={index} onClick={()=>{
+                                                                setData({description:item.desc})
+                                                                setCls(true)
+                                                                console.log("itemmm")
+                                                                }}>
                                                                 <Td>
                                                                     <Box h="10px" whitespace="nowrap">
                                                                         {item.desc}
@@ -145,23 +149,32 @@ import {
                     
                 </VStack>
             </ModalBody>
-  
-            <ModalFooter>
-                <VStack mt="5px" textAlign="center" borderRadius="5px">
-                    <Box fontSize="16px" textAlign="center" fontWeight="600" lineHeight="100%" display="inline-block" maxWidth="90%" verticalAlign="middle" m="0px 0px 5px 5px">
-                                            name of food
+            {
+                opn && <ModalFooter backgroundColor="#f8f8f8" w="100%" border="1px solid red" >
+                <VStack mt="5px" textAlign="center" borderRadius="5px" w="100%">
+                    <Box color="#5c5c5c" fontSize="16px" textAlign="center" fontWeight="600" lineHeight="100%" display="inline-block" maxWidth="90%" verticalAlign="middle" m="0px 0px 5px 5px">
+                        {data.desc}
                     </Box>
                     <VStack w="60%" backgroundColor="#efefef" verticalAlign="middle" p="8px 5px" borderRadius="3px">
-                        <Box>Serving:</Box>
-                        <Flex>
-                            <Box>
-
+                        <Box w="100%" textAlign="left" color="#5c5c5c"  >Serving:</Box>
+                        <Flex m="5px 10px" h="25px" verticalAlign="center">
+                            <Box color="#5c5c5c" textAlign="left">
+                                <Input p="0 10px" type="number"  border="1px solid #5c5c5c" borderRadius="2px" backgroundColor="#fbfbfa" fontSize="12px" height="23px" verticalAlign="top" onChange={(e)=>setData({...data,amount:e.target.value})} />
                             </Box>
-                            <Button color="black" variant='ghost'>ADD</Button>
+                            <Box ml="5px" color="#5c5c5c" textAlign="left">
+                                <Input  p="0 10px" type="text" border="1px solid #5c5c5c" borderRadius="2px" backgroundColor="#fbfbfa" fontSize="12px" height="23px" verticalAlign="top" onChange={(e)=>setData({...data,unit:e.target.value})}/>
+                            </Box>
+                            <Box float="right" >
+                                <Button h="25px" cursor="pointer" color="#fff" border="1px solid #ff763f" background="#ff763f" p="0px 20px" fontSize="14px" fontWeight="600" borderRadius="6px" verticalAlign="top" onClick={()=>{
+                                    setCls(false)
+                                    handlechange(data)}}>ADD</Button>
+                            </Box>
                         </Flex>
                     </VStack>
                 </VStack>
             </ModalFooter>
+            }
+            
           </ModalContent>
         </Modal>
       </>
