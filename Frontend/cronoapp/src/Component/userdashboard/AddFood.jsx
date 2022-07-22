@@ -25,6 +25,8 @@ import {
   
   function AddFood() {
     const { isOpen, onOpen, onClose } = useDisclosure()
+    const [data,setData] = React.useState({})
+    const [opn,setCls] = React.useState(false)
     return (
       <>
         <Button onClick={onOpen} color="#404040" fontSize="14px" fontWeight="700" p="4px 12px" textAlign="left" border="none" borderRadius="14px"  mr="5px">
@@ -217,10 +219,10 @@ import {
   
             <ModalFooter>
                 
-              <Button colorScheme='blue' mr={3} onClick={onClose}>
-                Close
-              </Button>
-              <Button color="black" variant='ghost'>Secondary Action</Button>
+              <Flex>
+
+                <Button color="black" variant='ghost'>ADD</Button>
+              </Flex>
             </ModalFooter>
           </ModalContent>
         </Modal>
