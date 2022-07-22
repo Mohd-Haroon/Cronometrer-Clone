@@ -5,7 +5,7 @@ import { IoIosArrowDown } from 'react-icons/io';
 import { Link } from 'react-router-dom';
 import { BsInstagram } from 'react-icons/bs';
 
-import { FaFacebookF } from 'react-icons/fa';
+// import { FaFacebookF } from 'react-icons/fa';
 
 import { BsTwitter } from 'react-icons/bs';
 import { GrYoutube } from 'react-icons/gr';
@@ -33,18 +33,15 @@ const HomePage = () => {
     {/* homePaage */}
 
     <div className={styles.homeDivsez}>
-
-    <div className={styles.secimg}><img src="https://cdn1.cronometer.com/2021/landing/cronometer-hero-graphic.svg" alt="" /></div>
-    
         <div className={styles.h2div}>
             <h2>Eat smarter.<br/>Live better.</h2>
             <h4  className={styles.h4div}>Track your calories, exercise,<br/>biometrics and health data.</h4>
 
-           <Link to="/signup"> <button className={styles.btn2}>Sign Up-it's Free!</button></Link>
+            <button className={styles.btn2}>Sign Up-it's Free!</button>
 
             <p style={{marginTop:"40px"}}>Already have an account? <Link to="/login" style={{textDecoration:"underline"}}> Log in.</Link></p>
         </div>
-        
+        <div className={styles.secimg}><img src="https://cdn1.cronometer.com/2021/landing/cronometer-hero-graphic.svg" alt="" /></div>
     </div>
 
     <div className={styles.parentDiv}>
@@ -212,7 +209,7 @@ const HomePage = () => {
             <h4>Find out if you're getting the vitamins and <br /> minerals you need with our food diary app.</h4>
            
         </div>
-       <Link to="/signup"> <button className={styles.btn3}>Sign Up - it's Free!</button></Link>
+        <button className={styles.btn3}>Sign Up - it's Free!</button>
     </div>
     
 
@@ -266,7 +263,7 @@ const HomePage = () => {
 " alt="" />
          <h4  className={styles.gridh4}>Cronometer tracks EVERYTHING! ... It's easy to use and links with my FitBit.</h4>
          <div className={styles.qimage}>
-        <img src="https://cdn1.cronometer.com/2021/landing/android-icon.svg" alt="" />
+         <img src="https://cdn1.cronometer.com/2021/landing/android-icon.svg" alt="" />
          </div>
       </div>
     </div>
@@ -325,7 +322,7 @@ const HomePage = () => {
      <BsInstagram style={{margin:"11px 11px"}}/>
    </div>
    <div className={styles.NavBarCart}>
-    <FaFacebookF style={{margin:"11px 11px"}} />
+    {/* <FaFacebookF style={{margin:"11px 11px"}} /> */}
    </div>
    <div className={styles.NavBarCart}>
     <BsTwitter style={{margin:"11px 11px"}}/>

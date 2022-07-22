@@ -2,7 +2,7 @@ import React from 'react'
 import styles from "../CssComponent/Navbar.module.css"
 import { IoIosArrowDown } from 'react-icons/io';
 import { Link } from 'react-router-dom';
-// import { BsInstagram } from 'react-icons/bs';
+import { BsInstagram } from 'react-icons/bs';
 
 
 import Menuoff from './Menuoff';
