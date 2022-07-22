@@ -1,5 +1,8 @@
-import React from 'react';
+import React, { useState } from "react";
 import styled from 'styled-components';
+import { ToastContainer, toast } from "react-toastify";
+import axios from "axios";
+import { Link } from "react-router-dom";
 
 const Img = styled.img`
   width: 20%;
@@ -41,8 +44,35 @@ const Button = styled.button`
 `;
 
 const Signup = () => {
+  const [signUpdata, setsignUpdata] = useState({});
+
+  const notify = (msg) => toast(msg);
+  const error = (msg) => toast.error(msg);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setsignUpdata({ ...signUpdata, [name]: value });
+  };
+
+  const handleSignup = (e) => {
+    e.preventDefault();
+    axios
+      .post("https://salty-chamber-30466.herokuapp.com/auth/signup", signUpdata)
+      .then((res) => {
+        if (res.data.message) {
+          notify(res.data.message.toUpperCase());
+        }
+      })
+      .catch((err) => {
+        if (err.response.status === 422) {
+          error(err.response.data.error.toUpperCase());
+        }
+      });
+      alert("Signup Successful");
+     
+  };
   return (
-    <form>
+    <form action="" style={{textAlign:"center"}}>
       <div style={{ boxShadow: 'rgba(0, 0, 0, 0.24) 0px 3px 8px' }}>
         <Img src='https://cdn1.cronometer.com/logos/cronometer-logo-orange.png' />
       </div>
@@ -52,11 +82,11 @@ const Signup = () => {
         </h1>
       </div>
       <Data>
-        <Input type='email' placeholder='Email Address' autoComplete='on' />
+        <Input type='email' placeholder='Email Address' autoComplete='on' onChange={handleChange} required/>
         <br />
-        <Input type='password' placeholder='Password' />
+        <Input type='password' placeholder='Password' onChange={handleChange} required/>
         <br />
-        <Input type='password' placeholder='Confirm Password' />
+        <Input type='password' placeholder='Confirm Password' onChange={handleChange} required/>
         <br />
       </Data>
       <Data>
@@ -64,17 +94,17 @@ const Signup = () => {
         <div>
           <Label>
             <p>Sex:</p>
-            <input type='radio' value='Female'/> <label>Male</label>
-            <input type='radio' value='Male'/> <label>Female</label>
+            <input type='radio' value='Female' onChange={handleChange} /> <label>Male</label>
+            <input type='radio' value='Male'  onChange={handleChange} /> <label>Female</label>
           </Label>
           <Label>
-            <label>Born:</label><input type='date'/>
+            <label>Born:</label><input type='date' onChange={handleChange} />
           </Label>
           <Label>
-            <label>Height:</label><Input type='text'/>
+            <label>Height:</label><Input type='text'onChange={handleChange} />
           </Label>
           <Label>
-            <label>Weight:</label><Input type='text'/>
+            <label>Weight:</label><Input type='text'onChange={handleChange} />
           </Label>
         </div>
       </Data>
@@ -116,8 +146,10 @@ const Signup = () => {
       <br />
       <Data>
         <div>
-          <Button>
-            <h1>Create Account</h1>
+          <Button onClick={handleSignup}>
+            <Link to='/login'>
+               <h1>Create Account</h1>
+            </Link>
           </Button>
         </div>
       </Data>
