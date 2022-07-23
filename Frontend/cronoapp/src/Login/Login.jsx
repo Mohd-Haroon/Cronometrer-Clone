@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
-import styled from 'styled-components';
-import { Link } from 'react-router-dom';
+import React, { useState } from "react";
+import styled from "styled-components";
+import { Link, useNavigate } from "react-router-dom";
 // import { ToastContainer, toast } from "react-toastify";
-import axios from 'axios';
+import axios from "axios";
 
 const Log = styled.div`
   width: 40%;
@@ -34,13 +34,12 @@ const Label = styled.label`
   gap: 18%;
 `;
 
-const Login = ({ setState }) => {
-
+const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  // const notify = (msg) => toast(msg);
-  // const error = (msg) => toast.error(msg);
+  const navigate = useNavigate();
+
   const handleLogin = () => {
     axios
       .post("https://salty-chamber-30466.herokuapp.com/auth/login", {
@@ -50,37 +49,45 @@ const Login = ({ setState }) => {
       .then((res) => {
         alert("Loging Successful");
         console.log(res);
-        if (res.data.message) {
-          // notify(res.data.message.toUpperCase());
-          localStorage.setItem("user", JSON.stringify(res.data.userLogin));
-          localStorage.setItem("token", JSON.stringify(res.data.token));
-          setState(false);
+        if (res.data) {
+          localStorage.setItem("email", JSON.stringify(res.data.email));
+          localStorage.setItem("token", JSON.stringify(res.data.id));
+          navigate("/user/diary");
         }
       })
       .catch((err) => {
-        // alert("Wrong credentials");
-        // if (err.response.status === 422 || 404) {
-        //   error(err.response.data.error.toUpperCase());
-        // }
+        console.log(err);
       });
   };
 
   return (
-    <div>  
+    <div>
       <Log>
         <div>
           <div>
-            <Img src='https://cdn1.cronometer.com/logos/cronometer-logo-orange.png' />
+            <Img src="https://cdn1.cronometer.com/logos/cronometer-logo-orange.png" />
           </div>
           <br />
           <div>
-            <Input type='email'  value={email} onChange={(e) => setEmail(e.target.value)} placeholder='Enter Your Email' />
+            <Input
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="Enter Your Email"
+              name="email"
+            />
             <br />
-            <Input type='password' value={password} onChange={(e) => setPassword(e.target.value)}placeholder='Enter Password' />
+            <Input
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              placeholder="Enter Password"
+              name="password"
+            />
             <br />
             <Button onClick={handleLogin}>
               {/* <Link to='/'> */}
-                <h1>Login</h1>
+              <h1>Login</h1>
               {/* </Link> */}
             </Button>
             <br />
@@ -88,21 +95,19 @@ const Login = ({ setState }) => {
           <Label>
             <p>
               Not a member?
-              <Link to='/signup' style={{ color: 'coral' }}>
+              <Link to="/signup" style={{ color: "coral" }}>
                 Sign Up Now
               </Link>
             </p>
             <p>
-              <a href='' style={{ color: 'coral' }}>
+              <a href="" style={{ color: "coral" }}>
                 Forget Password
               </a>
             </p>
           </Label>
-        
         </div>
       </Log>
-      
-     </div>
+    </div>
   );
 };
 
