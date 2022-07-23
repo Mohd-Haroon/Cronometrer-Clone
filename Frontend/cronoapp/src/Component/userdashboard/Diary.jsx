@@ -28,15 +28,19 @@ export const Diary = () => {
   const [userid,setuserId] = React.useState(localStorage.getItem("token")) // user id
   const [token,setToken] = React.useState(localStorage.getItem("email"))
     React.useEffect(()=>{
-      if(token==null || !token){
+      if(!token){
         navigate("/login");
       }
     },[token])
-
+    if(!token){
+        navigate("/login");
+      }
   React.useEffect(()=>{
     // get data after rendering
-    let a = (datee.toDateString()).toString();
-    dispatch(getData(userid,a))
+    if(token){
+        let a = (datee.toDateString()).toString();
+        dispatch(getData(userid,a))
+    } 
   },[dispatch])
   
   //data sending to post
