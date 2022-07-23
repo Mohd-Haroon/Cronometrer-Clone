@@ -26,10 +26,11 @@ const Error=()=>{
     }
 }
 
-export const getData=()=>(dispatch)=>{
+export const getData=(userid,datee)=>(dispatch)=>{
+  console.log('get reducer',userid,datee)
     dispatch(loadings())
     axios({
-        url: "https://salty-chamber-30466.herokuapp.com/user/62da757942685ba7352bcf55/Fri Jul 23 2022/stats",
+        url: `https://salty-chamber-30466.herokuapp.com/user/${userid}/${datee}/stats`,
         method: "GET",
       })
         .then((res) => {
@@ -38,13 +39,13 @@ export const getData=()=>(dispatch)=>{
         })
         .catch((err) => dispatch(Error()));   
 }
-console.log("reducerinitstate",)
+// console.log("reducerinitstate",)
 
-export const postData=(data,dispatch)=>{
-    console.log('post reducer',data)
-    axios.post('https://salty-chamber-30466.herokuapp.com/user/62da757942685ba7352bcf55/Fri Jul 23 2022/stats', data)
+export const postData=(data,dispatch,a,userid)=>{
+    console.log('post reducer',data,a,userid)
+    axios.post(`https://salty-chamber-30466.herokuapp.com/user/${userid}/${a}/stats`, data)
       .then((res)=>{
-         dispatch(getData())
+         dispatch(getData(userid,a))
         console.log("posted")
         })
       .catch(function (error) {

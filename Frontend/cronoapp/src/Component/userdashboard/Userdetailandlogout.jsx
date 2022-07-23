@@ -1,3 +1,4 @@
+import React from "react";
 import {
     Popover,
     PopoverTrigger,
@@ -9,9 +10,20 @@ import {
     PopoverCloseButton,
     PopoverAnchor,Flex,Box,Image,Button,Portal
   } from '@chakra-ui/react'
+  import { useNavigate } from "react-router-dom";
+
 
 
   export const UserDetails=()=>{
+    const [email,setemail] = React.useState(localStorage.getItem("email"))
+    const navigate = useNavigate()
+
+    const logout=()=>{
+        localStorage.setItem("email", JSON.stringify(null));
+        localStorage.setItem("token", JSON.stringify(null));
+        navigate("/login")
+    }
+
     return (
         <Popover>
             <PopoverTrigger>
@@ -25,10 +37,10 @@ import {
             <Portal>
                 <PopoverContent size="md" backgroundColor="white" color="#5c5c5c">
                 <PopoverArrow />
-                <PopoverHeader fontSize="12px">Signed in as :qureshiharoon</PopoverHeader>
+                <PopoverHeader fontSize="12px">Signed in as :{email}</PopoverHeader>
                 <PopoverCloseButton />
                 <PopoverBody>
-                    <Button colorScheme='blue'>Logout</Button>
+                    <Button colorScheme='blue'onClick={()=>logout()} >Logout</Button>
                 </PopoverBody>
                 <PopoverFooter></PopoverFooter>
                 </PopoverContent>
