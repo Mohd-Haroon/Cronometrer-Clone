@@ -2,6 +2,7 @@ import React from 'react'
 import { BsInstagram, BsTwitter } from 'react-icons/bs'
 import { FaFacebookF } from 'react-icons/fa'
 import { GrYoutube } from 'react-icons/gr'
+import { Link } from 'react-router-dom'
 import styles from "../CssComponent/OtherFooter.module.css"
 const OTherFooter = () => {
   return (
@@ -9,11 +10,11 @@ const OTherFooter = () => {
        <div className={styles.mainFot}>
         <div className={styles.fotnav}>
             <ul>
-                <li> <p className={styles.oopp}> Blogs</p></li>
+              <Link to="/blog"><li> <p className={styles.oopp}> Blogs</p></li></Link>  
                 <li >
                     <div className={styles.org}></div>
                 </li>
-                <li> <p className={styles.oopp}> Froums</p></li>
+                <Link to="/forum">  <li> <p className={styles.oopp}> Froums</p></li></Link> 
                 <li >
                     <div className={styles.org}></div>
                 </li>
