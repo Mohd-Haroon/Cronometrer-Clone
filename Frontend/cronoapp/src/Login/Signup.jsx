@@ -57,7 +57,7 @@ const Signup = () => {
   const handleSignup = (e) => {
     e.preventDefault();
     axios
-      .post("https://salty-chamber-30466.herokuapp.com/auth/signup", signUpdata)
+      .post("https://morning-citadel-47535.herokuapp.com/auth/signup", signUpdata)
       .then((res) => {
         if (res.data.message) {
           // notify(res.data.message.toUpperCase());
