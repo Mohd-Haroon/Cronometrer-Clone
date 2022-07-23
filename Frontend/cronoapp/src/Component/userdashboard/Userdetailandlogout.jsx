@@ -1,3 +1,4 @@
+import React from "react";
 import {
     Popover,
     PopoverTrigger,
@@ -12,6 +13,8 @@ import {
 
 
   export const UserDetails=()=>{
+    const [email,setemail] = React.useState(localStorage.getItem("user"))
+
     return (
         <Popover>
             <PopoverTrigger>
@@ -25,7 +28,7 @@ import {
             <Portal>
                 <PopoverContent size="md" backgroundColor="white" color="#5c5c5c">
                 <PopoverArrow />
-                <PopoverHeader fontSize="12px">Signed in as :qureshiharoon</PopoverHeader>
+                <PopoverHeader fontSize="12px">Signed in as :{email}</PopoverHeader>
                 <PopoverCloseButton />
                 <PopoverBody>
                     <Button colorScheme='blue'>Logout</Button>

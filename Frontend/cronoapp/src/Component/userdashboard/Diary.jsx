@@ -23,33 +23,44 @@ export const Diary = () => {
     const {currentdata,success} = useSelector((store)=>store.diary);
     const dispatch = useDispatch()
   const [datee,setDate] = React.useState(new Date())
-  const [maindata,setMainData] = React.useState({})
+  const [userid,setuserId] = React.useState(localStorage.getItem("userid"))
+  const [token,setToken] = React.useState(localStorage.getItem("token"))
+    React.useEffect(()=>{
+      if(!token){
+        // navigate("/login");
+      }
+    },[])
 
   React.useEffect(()=>{
     // get data after rendering
-    dispatch(getData())
+    let a = (datee.toDateString()).toString();
+    dispatch(getData(userid,a))
   },[dispatch])
   
   //data sending to post
   const handlechange=(da)=>{
+    // da == data of post 
     console.log("dateee",datee.toDateString())
     let a = (datee.toDateString()).toString();
     let b = {...da,date:a,energy:"100 kcal"}
     console.log("diarymaindata",b)
-    postData(b,dispatch)
+    postData(b,dispatch,a,userid)
   }
     //date change callback
   const datechange=(date)=>{
     //setting date from calender
     setDate(date)
+    let a = (date.toDateString()).toString()
     console.log('dateeeee',datee.toDateString())
+    // getting data after change in date
+    dispatch(getData(userid,a))
   }
 
   return (
     <VStack border="1px solid white" w="80%" h="auto" mt="30px">
       <Flex w="100%" gap="10px">
-        <VStack  border="1px solid #eee" w="30%">
-            <DatePick datechange={datechange} />
+        <VStack w="30%">
+            <DatePick setDate={setDate} datechange={datechange} />
         </VStack>
         <VStack   w="70%">
         <Box w="100%">

@@ -50,10 +50,10 @@ const Login = ({ setState }) => {
       .then((res) => {
         alert("Loging Successful");
         console.log(res);
-        if (res.data.message) {
+        if (res.data) {
           // notify(res.data.message.toUpperCase());
-          localStorage.setItem("user", JSON.stringify(res.data.userLogin));
-          localStorage.setItem("token", JSON.stringify(res.data.token));
+          localStorage.setItem("email", JSON.stringify(res.data.email));
+          localStorage.setItem("token", JSON.stringify(res.data.id));
           setState(false);
         }
       })

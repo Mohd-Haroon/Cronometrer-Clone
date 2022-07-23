@@ -16,10 +16,16 @@ import OTherFooter from "../../components/OTherFooter"
 
 export const UserMainPage = () => {
     const navigate = useNavigate()
+    const [token,setToken] = React.useState(localStorage.getItem("token"))
+    React.useEffect(()=>{
+      if(!token){
+        // navigate("/login");
+      }
+    },[])
   return (
     <VStack backgroundColor="white" w="100%">
       <HStack w="100%" h="60px" border="1px solid #E0E0DC">
-      <Flex m="6px 0px 0px 30px">
+      <Flex m="6px 0px 0px 30px" mr="100px">
                 <Box w="200px" h="45px">
                     <Image
                     src="https://cdn1.cronometer.com/logos/cronometer-logo-orange.png"
