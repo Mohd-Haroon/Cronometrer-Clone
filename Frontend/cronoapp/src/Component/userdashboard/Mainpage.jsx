@@ -18,10 +18,13 @@ export const UserMainPage = () => {
     const navigate = useNavigate()
     const [token,setToken] = React.useState(localStorage.getItem("email"))
     React.useEffect(()=>{
-      if(token==null || !token){
+      if(!token){
         navigate("/login");
       }
     },[])
+    if(!token){
+      navigate("/login");
+    }
   return (
     <VStack backgroundColor="white" w="100%">
       <HStack w="100%" h="60px" border="1px solid #E0E0DC">

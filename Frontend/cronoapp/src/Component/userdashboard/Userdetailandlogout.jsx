@@ -19,8 +19,8 @@ import {
     const navigate = useNavigate()
 
     const logout=()=>{
-        localStorage.setItem("email", JSON.stringify(null));
-        localStorage.setItem("token", JSON.stringify(null));
+        localStorage.removeItem("email");
+        localStorage.removeItem("token");
         navigate("/login")
     }
 
