@@ -27,6 +27,7 @@ export const Settings = () => {
   const [update, setUpdate] = useState({});
 
   const userId = localStorage.getItem("token");
+  const email = localStorage.getItem("email");
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -46,7 +47,8 @@ export const Settings = () => {
 
   const handleUpdate = () => {
     const payload = JSON.stringify(update);
-    fetch(`https://salty-chamber-30466.herokuapp.com/auth/user/${userId}`, {
+    console.log(payload);
+    fetch(`https://morning-citadel-47535.herokuapp.com/auth/user/${userId}`, {
       method: "PATCH",
       headers: {
         "content-type": "application/json",
@@ -58,10 +60,13 @@ export const Settings = () => {
   };
 
   const handleDelete = () => {
-    fetch(`https://salty-chamber-30466.herokuapp.com/auth/user/${userId}`, {
+    fetch(`https://morning-citadel-47535.herokuapp.com/auth/user/${userId}`, {
       method: "DELETE",
     })
-      .then((res) => navigate("/"))
+      .then((res) => {
+        localStorage.removeItem("userId");
+        navigate("/");
+      })
       .catch((err) => console.log(err));
   };
 
@@ -83,12 +88,7 @@ export const Settings = () => {
       <div className={styles.settingsChild2}>
         <div>
           <p className={styles.emailP}>Email</p>
-          <Input
-            width="50%"
-            size="sm"
-            value="beniwalanshu1412@gmail.com"
-            readOnly="readOnly"
-          />
+          <Input width="50%" size="sm" value={email} readOnly="readOnly" />
           <Button
             onClick={onOpen}
             className={styles.updateBtn}

@@ -42,7 +42,7 @@ const Login = () => {
 
   const handleLogin = () => {
     axios
-      .post("https://salty-chamber-30466.herokuapp.com/auth/login", {
+      .post("https://morning-citadel-47535.herokuapp.com/auth/login", {
         email,
         password,
       })
