@@ -150,7 +150,7 @@ import {
                 </VStack>
             </ModalBody>
             {
-                opn && <ModalFooter backgroundColor="#f8f8f8" w="100%" border="1px solid red" >
+                opn && <ModalFooter backgroundColor="#f8f8f8" w="100%" >
                 <VStack mt="5px" textAlign="center" borderRadius="5px" w="100%">
                     <Box color="#5c5c5c" fontSize="16px" textAlign="center" fontWeight="600" lineHeight="100%" display="inline-block" maxWidth="90%" verticalAlign="middle" m="0px 0px 5px 5px">
                         {data.description}
@@ -159,10 +159,10 @@ import {
                         <Box w="100%" textAlign="left" color="#5c5c5c"  >Serving:</Box>
                         <Flex m="5px 10px" h="25px" verticalAlign="center">
                             <Box color="#5c5c5c" textAlign="left">
-                                <Input p="0 10px" type="number"  border="1px solid #5c5c5c" borderRadius="2px" backgroundColor="#fbfbfa" fontSize="12px" height="23px" verticalAlign="top" onChange={(e)=>setData({...data,amount:e.target.value})} />
+                                <Input p="0 10px" type="number"  border="1px solid #5c5c5c" placeholder="Amount" borderRadius="2px" backgroundColor="#fbfbfa" fontSize="12px" height="23px" verticalAlign="top" onChange={(e)=>setData({...data,amount:e.target.value})} />
                             </Box>
                             <Box ml="5px" color="#5c5c5c" textAlign="left">
-                                <Input  p="0 10px" type="text" border="1px solid #5c5c5c" borderRadius="2px" backgroundColor="#fbfbfa" fontSize="12px" height="23px" verticalAlign="top" onChange={(e)=>setData({...data,unit:e.target.value})}/>
+                                <Input  p="0 10px" type="text" border="1px solid #5c5c5c" placeholder="unit" borderRadius="2px" backgroundColor="#fbfbfa" fontSize="12px" height="23px" verticalAlign="top" onChange={(e)=>setData({...data,unit:e.target.value})}/>
                             </Box>
                             <Box float="right" >
                                 <Button h="25px" cursor="pointer" color="#fff" border="1px solid #ff763f" background="#ff763f" p="0px 20px" fontSize="14px" fontWeight="600" borderRadius="6px" verticalAlign="top" onClick={()=>{
