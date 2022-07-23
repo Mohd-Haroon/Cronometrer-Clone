@@ -64,9 +64,11 @@ const Signup = () => {
         }
       })
       .catch((err) => {
+
         // if (err.response.status === 422) {
         //   error(err.response.data.error.toUpperCase());
         // }
+
       });
       alert("Signup Successful");
      

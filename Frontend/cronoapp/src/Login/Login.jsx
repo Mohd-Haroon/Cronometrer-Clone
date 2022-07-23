@@ -38,6 +38,7 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+
   const navigate = useNavigate();
 
   const handleLogin = () => {
@@ -49,6 +50,7 @@ const Login = () => {
       .then((res) => {
         alert("Loging Successful");
         console.log(res);
+
         if (res.data) {
           localStorage.setItem("email", JSON.stringify(res.data.email));
           localStorage.setItem("token", JSON.stringify(res.data.id));
@@ -57,6 +59,7 @@ const Login = () => {
       })
       .catch((err) => {
         console.log(err);
+
       });
   };
 

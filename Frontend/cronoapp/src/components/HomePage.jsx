@@ -42,7 +42,7 @@ const HomePage = () => {
 
            <Link to="/signup"> <button className={styles.btn2}>Sign Up-it's Free!</button></Link>
 
-            <p style={{marginTop:"40px"}}>Already have an account? <Link to="/login" style={{textDecoration:"underline"}}> Log in.</Link></p>
+            <p style={{marginTop:"40px"}}>Already have an account? <Link to="/login" style={{textDecoration:"underline"}}> <span> Log in.</span></Link></p>
         </div>
         
     </div>
@@ -349,7 +349,7 @@ const HomePage = () => {
                 <div>
                     <p className={styles.ppara}>Cronometer</p>
                     <div className={styles.ppa}>
-                        <p>For individual</p>
+                       <Link to="/product"> <p>For individual</p></Link>
                         <p>For Profeesional</p>
                         <p>privecy</p>
                         <p>Terms</p>
@@ -358,11 +358,11 @@ const HomePage = () => {
                 <div>
                     <p className={styles.ppara}>The Company</p>
                     <div className={styles.ppa}>
-                        <p>About Us</p>
-                        <p>Crono Blog</p>
-                        <p>Crono Forums</p>
+                    <Link to="/about"> <p>About Us</p></Link>
+                    <Link to="/blog"> <p>Crono Blog</p></Link>
+                    <Link to="/forum"> <p>Crono Forums</p></Link>
                         <p>jobs</p>
-                        <p>Support</p>
+                        <Link to="/support"><p>Support</p></Link>
                     </div>
                 </div>
                 <div>
