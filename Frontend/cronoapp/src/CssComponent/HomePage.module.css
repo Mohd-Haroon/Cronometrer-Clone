@@ -157,6 +157,9 @@
     font-size: 1.125em;
     line-height: 1.5em;
 }
+.h2div p span:hover{
+    color: orangered;
+}
 .imgHere{
     width: 12%;
     display: flex;
