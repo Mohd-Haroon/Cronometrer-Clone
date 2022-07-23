@@ -18,18 +18,20 @@ import {
 import {DatePick} from "./Datepicker"
 import {useDispatch,useSelector} from "react-redux";
 import {getData,postData} from "../../Redux/actiontypes"
+import {useNavigate} from "react-router-dom";
 
 export const Diary = () => {
     const {currentdata,success} = useSelector((store)=>store.diary);
     const dispatch = useDispatch()
+    const navigate = useNavigate()
   const [datee,setDate] = React.useState(new Date())
-  const [userid,setuserId] = React.useState(localStorage.getItem("userid"))
-  const [token,setToken] = React.useState(localStorage.getItem("token"))
+  const [userid,setuserId] = React.useState(localStorage.getItem("token")) // user id
+  const [token,setToken] = React.useState(localStorage.getItem("email"))
     React.useEffect(()=>{
-      if(!token){
-        // navigate("/login");
+      if(token==null || !token){
+        navigate("/login");
       }
-    },[])
+    },[token])
 
   React.useEffect(()=>{
     // get data after rendering
@@ -42,7 +44,7 @@ export const Diary = () => {
     // da == data of post 
     console.log("dateee",datee.toDateString())
     let a = (datee.toDateString()).toString();
-    let b = {...da,date:a,energy:"100 kcal"}
+    let b = {...da,date:a}
     console.log("diarymaindata",b)
     postData(b,dispatch,a,userid)
   }
@@ -129,7 +131,7 @@ export const Diary = () => {
                                                             </Td>
                                                             <Td textAlign="right">
                                                                 <Box h="10px" whitespace="nowrap">
-                                                                {el.energy}
+                                                                {el.energy} kcal
                                                                 </Box>
                                                             </Td>
                                                         </Tr>

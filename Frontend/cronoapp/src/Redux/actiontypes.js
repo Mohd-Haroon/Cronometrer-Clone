@@ -42,10 +42,10 @@ export const getData=(userid,datee)=>(dispatch)=>{
 // console.log("reducerinitstate",)
 
 export const postData=(data,dispatch,a,userid)=>{
-    console.log('post reducer',data,dispatch,a,userid)
+    console.log('post reducer',data,a,userid)
     axios.post(`https://salty-chamber-30466.herokuapp.com/user/${userid}/${a}/stats`, data)
       .then((res)=>{
-         dispatch(getData())
+         dispatch(getData(userid,a))
         console.log("posted")
         })
       .catch(function (error) {

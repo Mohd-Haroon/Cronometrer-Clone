@@ -16,10 +16,10 @@ import OTherFooter from "../../components/OTherFooter"
 
 export const UserMainPage = () => {
     const navigate = useNavigate()
-    const [token,setToken] = React.useState(localStorage.getItem("token"))
+    const [token,setToken] = React.useState(localStorage.getItem("email"))
     React.useEffect(()=>{
-      if(!token){
-        // navigate("/login");
+      if(token==null || !token){
+        navigate("/login");
       }
     },[])
   return (

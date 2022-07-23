@@ -120,7 +120,7 @@ import {
                                             {
                                                 AddFooddata.map((item,index)=>{
                                                     return <Tr key={index} onClick={()=>{
-                                                                setData({description:item.desc})
+                                                                setData({description:item.desc,energy:item.energy})
                                                                 setCls(true)
                                                                 console.log("itemmm")
                                                                 }}>
