@@ -86,7 +86,7 @@ export const Diary = () => {
             <Image p="2px" mt="10px" float="right" w="25px" h="25px" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABgCAYAAADimHc4AAABaklEQVR4Xu3azU3DQBAG0LlxoQXIhRKhBkQJUASUACVAJwgJceLHI+VCVpGdeM0Y6T3pk1DivcxhY3a/CAAAAAAAgPU5G3I15GnI6zb5d36W37GQ0yEPQ76GfO9JfpfP5LN0dDLkJdqB70s+m2vo5C7aIY8l19DBxZDPaAc8llyTa5npOtrhTk2uZabnaAc7NflbwEwf0Q52at6D2d6iHezU5FpmsgUVu4l2sFOTa5lpE8e/hp4HXdxGO+Cx+EesozxWOOS3wFHEAvKA7T7GD+PyGYdxC8p9/TJ+H0c/bj+z5wMAACxAL6iIXlAhvaBiekGF9IKK6QUVO+QiZjcu5TvQCyqmF1TMFlRML6jYJo5/DXVH3IleUDG9oBXQC1oJvSAAAIA/phdURC+okF5QMb2gQnpBxfSCih1yEbMbl/Id6AUV0wsqZgsqphdUbBPHv4a6I+5EL6iYXtAK6AWthF4QAAAAAADwr/wAXpVUQUN5zAgAAAAASUVORK5CYII=" />
         </Box>
         {/* //table */}
-        <Box border="1px solid #e7e9ea" borderRadius="5px" m="13px 0px 5px 0px" minHeight="300px" w="100%" overflow="visible">
+        <Box border="1px solid #e7e9ea" borderRadius="5px" m="13px 0px 5px 0px" minHeight="300px" w="100%"  overflow="auto" position="relative" h="23em">
           <TableContainer w="100%">
             <Table textAlign="left" color="#222" border="1px solid #eee" borderRadius="2px">
                                     <Thead lineHeight="15px">
