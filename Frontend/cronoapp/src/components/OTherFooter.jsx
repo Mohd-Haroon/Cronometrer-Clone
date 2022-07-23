@@ -14,11 +14,12 @@ const OTherFooter = () => {
                 <li >
                     <div className={styles.org}></div>
                 </li>
-                <Link to="/forum">  <li> <p className={styles.oopp}> Froums</p></li></Link> 
+
+                <Link to="/forum">  <li> <p className={styles.oopp}> Forums</p></li></Link> 
                 <li >
                     <div className={styles.org}></div>
                 </li>
-                <li> <p className={styles.oopp}> Privecy</p></li>
+                <li> <p className={styles.oopp}> Privacy</p></li>
                 <li >
                     <div className={styles.org}></div>
                 </li>
@@ -30,7 +31,7 @@ const OTherFooter = () => {
                 <li >
                     <div className={styles.org}></div>
                 </li>
-                <li>jobs</li>
+                <li>Jobs</li>
             </ul>
         </div>
         </div> 

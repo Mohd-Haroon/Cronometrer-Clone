@@ -57,16 +57,18 @@ const Signup = () => {
   const handleSignup = (e) => {
     e.preventDefault();
     axios
-      .post("https://salty-chamber-30466.herokuapp.com/auth/signup", signUpdata)
+      .post("https://morning-citadel-47535.herokuapp.com/auth/signup", signUpdata)
       .then((res) => {
         if (res.data.message) {
           // notify(res.data.message.toUpperCase());
         }
       })
       .catch((err) => {
-        if (err.response.status === 422) {
-          // error(err.response.data.error.toUpperCase());
-        }
+
+        // if (err.response.status === 422) {
+        //   error(err.response.data.error.toUpperCase());
+        // }
+
       });
       alert("Signup Successful");
      
@@ -82,9 +84,9 @@ const Signup = () => {
         </h1>
       </div>
       <Data>
-        <Input type='email' placeholder='Email Address' autoComplete='on' onChange={handleChange} required/>
+        <Input type='email' placeholder='Email Address' name="email" autoComplete='on' onChange={handleChange} required/>
         <br />
-        <Input type='password' placeholder='Password' onChange={handleChange} required/>
+        <Input type='password' placeholder='Password' name="password" onChange={handleChange} required/>
         <br />
         <Input type='password' placeholder='Confirm Password' onChange={handleChange} required/>
         <br />
@@ -94,17 +96,17 @@ const Signup = () => {
         <div>
           <Label>
             <p>Sex:</p>
-            <input type='radio' value='Female' onChange={handleChange} /> <label>Male</label>
-            <input type='radio' value='Male'  onChange={handleChange} /> <label>Female</label>
+            <input type='radio' value='Female'  name="Male" onChange={handleChange} /> <label>Male</label>
+            <input type='radio' value='Male' name="Female" onChange={handleChange} /> <label>Female</label>
           </Label>
           <Label>
-            <label>Born:</label><input type='date' onChange={handleChange} />
+            <label>Born:</label><input type='date' name="dob" onChange={handleChange} />
           </Label>
           <Label>
-            <label>Height:</label><Input type='text'onChange={handleChange} />
+            <label>Height:</label><Input type='text' name="height" onChange={handleChange} />
           </Label>
           <Label>
-            <label>Weight:</label><Input type='text'onChange={handleChange} />
+            <label>Weight:</label><Input type='text' name="weight" onChange={handleChange} />
           </Label>
         </div>
       </Data>

@@ -5,13 +5,15 @@ import {Box} from "@chakra-ui/react";
 
 
 
-export const DatePick= ({datechange}) => {
+export const DatePick= ({setDate,datechange}) => {
     const [startDate, setStartDate] = useState(new Date());
   return (
     <>
         <DatePicker
         selected={startDate}
-        onChange={(date) => datechange(date)}
+        onChange={(date) => {
+          setDate(date)
+          datechange(date)}}
         inline
         />
     </>
