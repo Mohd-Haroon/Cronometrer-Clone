@@ -11,7 +11,7 @@ Let’s take a look of our project : -
 
 Github link : https://github.com/Mohd-Haroon/gusty-adjustment-6018
 
-Live: [https://medium.com/@shubhamkashayapverma/big-basket-clone-with-react-932fc3c12cdc](https://big-basket-clone-by-masai-school.netlify.app/)
+Live: [https://medium.com/@
 
 About Cronometer:
 
@@ -27,7 +27,7 @@ A Quick Tour of our Project
   <li>Footer</li>
   <li>Body(Home)</li> 
   <li>Signup Page</li>
-   <li>Product page</li>
+   <li>User Dashboard</li>
    
 <p></p>
 
