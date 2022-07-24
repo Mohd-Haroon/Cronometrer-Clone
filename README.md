@@ -16,7 +16,7 @@ Github link : https://github.com/Mohd-Haroon/gusty-adjustment-6018
 
 Live: https://cronometer-6018.netlify.app/
 
-Blog: https://medium.com/@karinakhairnar/19cad360aad5
+Blog: https://medium.com/@karinakhairnar/karina-khairnar-4f7349a02b9b
 
 About Cronometer:
 
