@@ -1,16 +1,22 @@
 # Cronometer-clone
-Health And Neutrition App with React.JS react-router Node.JS
+Health And Neutrition App
 
 We are in Unit-5 from Web-16 Batch students of Masai School
 
-at the end of unit Masai team is assigned a project and the project is based on the technology we are learned in the whole unit in this project we are used React.JS React- Redux and React -Router-Dom Node.JS Chakra UI library.
+At the end of unit Masai team is assigned a project and the project is based on the technology we are learned in the whole unit in this project we are used React.JS React- Redux and React -Router-Dom Node.JS Chakra UI library.
 
 Let’s take a look of our project : -
 ![image](https://github.com/Mohd-Haroon/Mohd-Haroon/blob/main/Screenshot%20(1861).png)
+
+
 ![image](https://github.com/Mohd-Haroon/Mohd-Haroon/blob/main/Screenshot%20(1862).png)
+
+
 Github link : https://github.com/Mohd-Haroon/gusty-adjustment-6018
 
 Live: https://cronometer-6018.netlify.app/
+
+Blog: https://medium.com/@karinakhairnar/19cad360aad5
 
 About Cronometer:
 
