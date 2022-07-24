@@ -13,7 +13,7 @@ const loadings = () => {
 };
 
 const Success = (payload) => {
-    console.log("succes payload",payload)
+    // console.log("succes payload",payload)
   return {
     type: actionTypes.SUCCESS,
     payload,
@@ -27,10 +27,10 @@ const Error=()=>{
 }
 
 export const getData=(userid,datee)=>(dispatch)=>{
-  console.log('get reducer',userid,datee)
+  // console.log('get reducer',userid,datee)
     dispatch(loadings())
     axios({
-        url: `https://salty-chamber-30466.herokuapp.com/user/${userid}/${datee}/stats`,
+        url: `https://morning-citadel-47535.herokuapp.com/user/${userid}/${datee}/stats`,
         method: "GET",
       })
         .then((res) => {
@@ -42,14 +42,14 @@ export const getData=(userid,datee)=>(dispatch)=>{
 // console.log("reducerinitstate",)
 
 export const postData=(data,dispatch,a,userid)=>{
-    console.log('post reducer',data,a,userid)
-    axios.post(`https://salty-chamber-30466.herokuapp.com/user/${userid}/${a}/stats`, data)
+    // console.log('post reducer',data,a,userid)
+    axios.post(`https://morning-citadel-47535.herokuapp.com/user/${userid}/${a}/stats`, data)
       .then((res)=>{
          dispatch(getData(userid,a))
-        console.log("posted")
+        // console.log("posted")
         })
       .catch(function (error) {
-        console.log(error);
+        // console.log(error);
       });
 }
 

@@ -46,10 +46,10 @@ export const Diary = () => {
   //data sending to post
   const handlechange=(da)=>{
     // da == data of post 
-    console.log("dateee",datee.toDateString())
+    // console.log("dateee",datee.toDateString())
     let a = (datee.toDateString()).toString();
     let b = {...da,date:a}
-    console.log("diarymaindata",b)
+    // console.log("diarymaindata",b)
     postData(b,dispatch,a,userid)
   }
     //date change callback
@@ -57,7 +57,7 @@ export const Diary = () => {
     //setting date from calender
     setDate(date)
     let a = (date.toDateString()).toString()
-    console.log('dateeeee',datee.toDateString())
+    // console.log('dateeeee',datee.toDateString())
     // getting data after change in date
     dispatch(getData(userid,a))
   }
